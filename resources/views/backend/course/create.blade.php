@@ -30,13 +30,23 @@
                             </ul>
                         </div>
                     @endif
+                    <div class="col-sm-6 form-group">
+                        <label for="title">Title *</label>
+                        <input class="form-control" id="title" type="text" name="title"
+                            value="{{ old('title') }}">
+                        <span class="text-warning">
+                            @error('title')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <label for="title">Title *</label>
-                            <input class="form-control" id="title" type="text" name="title"
-                                value="{{ old('title') }}">
+                            <label for="slug">Slug *</label>
+                            <input class="form-control" id="slug" type="text" name="slug"
+                                value="{{ old('slug') }}">
                             <span class="text-warning">
-                                @error('title')
+                                @error('slug')
                                     {{ $message }}
                                 @enderror
                             </span>
