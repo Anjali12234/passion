@@ -19,7 +19,7 @@ class UpdateServiceRequest extends FormRequest
             'description' => ['nullable'],
             'image' => ['nullable','image','mimes:png,jpg,jpeg'],
             'status' => ['nullable'],
-            'slug' => ['required', 'alpha_dash', Rule::unique('services', 'slug')->ignore($this->course)],
+            'slug' => ['required', 'alpha_dash', Rule::unique('courses', 'slug')->ignore($this->course)],
         ];
     }
 }
