@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,8 @@ Route::resource('service', ServiceController::class);
 Route::put('service/{service}/updateServiceStatus', [ServiceController::class, 'updateStatus'])->name('service.updateServiceStatus');
 Route::resource('slider', SliderController::class);
 Route::resource('testimonial', TestimonialController::class);
+Route::resource('staff', StaffController::class);
+Route::put('staff/{staff}/updatestaffStatus', [StaffController::class, 'updateStatus'])->name('staff.updateStaffStatus');
+
 
 
