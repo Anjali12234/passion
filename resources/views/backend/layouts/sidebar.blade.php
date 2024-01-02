@@ -34,22 +34,14 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="{{ route('admin.slider.index') }}" class="dropdown-toggle">
+                    <a href="{{ route('admin.slider.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-archive"></span><span class="mtext"> Slider </span>
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-command"></span><span class="mtext">Icons</span>
+                    <a href="{{ route('admin.testimonial.index') }}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-command"></span><span class="mtext">Testimonial</span>
                     </a>
-                    <ul class="submenu">
-                        <li><a href="bootstrap-icon.html">Bootstrap Icons</a></li>
-                        <li><a href="font-awesome.html">FontAwesome Icons</a></li>
-                        <li><a href="foundation.html">Foundation Icons</a></li>
-                        <li><a href="ionicons.html">Ionicons Icons</a></li>
-                        <li><a href="themify.html">Themify Icons</a></li>
-                        <li><a href="custom-icon.html">Custom Icons</a></li>
-                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">

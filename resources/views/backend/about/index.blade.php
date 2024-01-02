@@ -84,7 +84,7 @@
                         <div class="col-sm-6 form-group">
                             <label for="about_image">About Image</label>
                             <span>
-                                <img src="{{ $about->about_image ?? '' }}" height="70" alt="">
+                                <img src="{{ $about->about_image ?? '' }}" height="100px" width="100px"  alt="">
                             </span>
                             <input class="form-control" id="about_image" type="file" name="about_image">
                             <span class="text-warning">
@@ -97,7 +97,7 @@
                     <div class="col-sm-6 form-group">
                         <label for="about_image">Director Image</label>
                         <span>
-                            <img src="{{ $about->director_image ?? '' }}" height="70" alt="">
+                            <img src="{{ $about->director_image ?? '' }}" height="100px" width="100px" alt="">
                         </span>
                         <input class="form-control" id="director_image" type="file" name="director_image">
                         <span class="text-warning">
