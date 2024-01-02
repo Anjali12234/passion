@@ -39,8 +39,6 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <a class="btn btn-outline-warning" href="{{ route('admin.service.show', $service) }}">
-                                        <i class="bi bi-eye"></i></i></a>
                                     <a class="btn btn-outline-primary" href="{{ route('admin.service.edit', $service) }}">
                                         <i class="bi bi-pencil"></i></a>
 

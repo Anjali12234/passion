@@ -78,8 +78,6 @@
                                 <td><img src="{{ $slider->image }}" alt="" width="100px"></td>
 
                                 <td>
-                                    <a class="btn btn-outline-warning" href="{{ route('admin.slider.show', $slider) }}">
-                                        <i class="bi bi-eye"></i></i></a>
                                     <a class="btn btn-outline-primary" href="{{ route('admin.slider.edit', $slider) }}">
                                         <i class="bi bi-pencil"></i></a>
 
