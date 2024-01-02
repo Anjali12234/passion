@@ -57,6 +57,7 @@
 
                         <div class="col-sm-6 form-group">
                             <label for="image"> Image*</label>
+                            <img src="{{ $service->image }}" height="100px" width="100px" alt="">
 
                             <input class="form-control" id="image" type="file" name="image">
                             <span class="text-warning">

@@ -35,8 +35,8 @@ class TestimonialController extends Controller
     public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
     {
         $testimonial->update($request->validated());
-        toast('Service updated successfully', 'success');
-        return redirect(route('admin.service.index'));
+        toast('Testimonial updated successfully', 'success');
+        return redirect(route('admin.testimonial.index'));
     }
 
 

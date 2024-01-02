@@ -76,7 +76,7 @@
                         <div class="col-sm-6 form-group">
                             <label for="institute_logo"> Institute Logo </label>
                             <span>
-                                <img src="{{ $officeSetting->institute_logo ?? '' }}" height="70" alt="">
+                                <img src="{{ $officeSetting->institute_logo ?? '' }}" height="100px" width="100px"  alt="">
                             </span>
                             <input class="form-control" id="institute_logo" type="file" name="institute_logo">
 
