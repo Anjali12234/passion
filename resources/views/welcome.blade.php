@@ -24,9 +24,13 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/swiper-js/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/slick-slider/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
 
     <!-- dark version css -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/dark-v.css') }}">
+
 </head>
 
 <body>
@@ -91,7 +95,7 @@
     <!-- HEADER SECTION STARTS HERE ↓ -->
     <div class="tl-header">
         <div class="container">
-            <div class="row g-0 align-items-center">
+            <div class="row g-0 align-items-center sticky-top">
                 <div class="col-xl-2 col-lg-2">
                     <div class="row align-items-center">
                         <div class="col-lg-12 col-6">
@@ -159,9 +163,10 @@
 
     <!-- BANNER SECTION STARTS HERE ↓ -->
     <section class="tl-14-banner">
-        <div class="tl-14-banner-slider owl-carousel" style="width: 100%">
+        <div class="tl-14-banner-slider owl-carousel">
             @foreach ($sliders as $slider)
-                <img class="tl-14-banner-slide" src="{{ $slider->image ??''}}" alt="Banner Background">
+                <img class="tl-14-banner-slide" src="{{ $slider->image ?? '' }}" alt="Banner Background"
+                    style="width: 100%; height: auto; display: block;">
             @endforeach
         </div>
         <div class="tl-14-banner-slider-nav" id="tl-14-banner-slider-nav"></div>
@@ -185,6 +190,9 @@
         </div>
     </section>
     <!-- BANNER SECTION ENDS HERE ↑ -->
+
+
+
 
 
     <!-- CATEGORIES SECTION STARTS HERE ↓ -->
@@ -906,6 +914,18 @@
     <script src="{{ asset('assets/frontend/vendor/syotimer/jquery.syotimer.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/vendor/mixitup/mixitup.min.js') }}"></script>
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $(".tl-14-banner-slider").owlCarousel({
+                // Your Owl Carousel options go here
+                items: 1,
+                loop: true,
+                nav: true,
+                // ... other options
+            });
+        });
+    </script>
+
 </body>
 
 
