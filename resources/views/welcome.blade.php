@@ -1,934 +1,1479 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from talim-html.codebasket.xyz/light/index-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Dec 2023 05:10:07 GMT -->
+<!DOCTYPE HTML>
+<html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talim - School University & Online Education Template</title>
-    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/logo/favicon.ico') }}" type="image/x-icon">
-
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/owl-carousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/icofont.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/font-awesome/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/font-awesome/sharp-regular.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/font-awesome/sharp-solid.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/mean-menu/meanmenu.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/eocjs-newsticker/eocjs-newsticker.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/flag-icons/flag-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/swiper-js/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/vendor/slick-slider/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-
-    <!-- dark version css -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/dark-v.css') }}">
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Passion Education and Visa Consultancy</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="70x70" href="{{asset('assets/frontend/img/logo.png')}}">
+	<!-- bootstrap CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}" type="text/css" media="all" />
+	<!-- carousel CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/owl.carousel.min.css')}}" type="text/css" media="all" />
+	<!-- nivo-slider CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/nivo-slider.css')}}" type="text/css" media="all" />
+	<!-- animate CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/animate.css')}}" type="text/css" media="all" />
+	<!-- animated-text CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/animated-text.css')}}" type="text/css" media="all" />
+	<!-- font-awesome CSS -->
+	<link type="text/css" rel="stylesheet" href="{{asset('assets/frontend/fonts/font-awesome/css/font-awesome.min.css')}}">
+	<!-- font-flaticon CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/flaticon.css')}}" type="text/css" media="all" />
+	<!-- theme-default CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/theme-default.css')}}" type="text/css" media="all" />
+	<!-- meanmenu CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/meanmenu.min.css')}}" type="text/css" media="all" />
+	<!-- Main Style CSS -->
+	<link rel="stylesheet"  href="{{ asset('assets/frontend/style.css')}}" type="text/css" media="all" />
+	<!-- transitions CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/owl.transitions.css')}}" type="text/css" media="all" />
+	<!-- venobox CSS -->
+	<link rel="stylesheet" href="{{ asset('assets/frontend/venobox/venobox.css')}}" type="text/css" media="all" />
+	<!-- widget CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/widget.css')}}" type="text/css" media="all" />
+	<!-- responsive CSS -->
+	<link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}" type="text/css" media="all" />
+	<!-- modernizr js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/vendor/modernizr-3.5.0.min.js')}}"></script>
 
 </head>
-
 <body>
-
-
-    <!-- sidebar area start -->
-    <div class="kidba-menu-sidebar">
-        <div class="kidba-menu-sidebar-inner">
-            <div class="sidebar__close">
-                <button class="sidebar__close-btn" id="sidebar__close-btn">
-                    <span><i class="icofont-brand-nexus"></i></span>
-                    <span>close</span>
-                </button>
-            </div>
-            <div class="kidba-menu-sidebar-top mb-40">
-                <nav>
-                    <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
-                        <button class="active " id="nav-menu-tab" data-bs-toggle="tab" data-bs-target="#nav-menu"
-                            type="button" role="tab" aria-controls="nav-menu" aria-selected="true">Menu</button>
-                        <button id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button"
-                            role="tab" aria-controls="nav-info" aria-selected="false">Info</button>
-                    </div>
-                </nav>
-            </div>
-            <div class="kidba-menu-sidebar-bottom">
-                <div class="logo mb-40">
-                    <a href="index.html">
-                        <img src="{{ officeSetting()->institute_logo ?? '' }}" alt="logo">
-                    </a>
-                </div>
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-menu" role="tabpanel"
-                        aria-labelledby="nav-menu-tab">
-                        <div class="mobile-menu"></div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-                        <div class="kidba-sidebar-info-content-331">
-                            <ul>
-                                <li><i class="icofont-clock-time"></i> 9:30am - 6:30pm, Mon - Sun</li>
-                                <li><a href="tel:http://80012345676587"><i
-                                            class="icofont-phone"></i>{{ officeSetting()->institute_phone ?? '' }}</a>
-                                </li>
-                                <li><i class="icofont-google-map"></i>{{ officeSetting()->institute_address ?? '' }}
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="kidba-sidebar-info-social-331">
-                            <a href="{{ officeSetting()->facebook_url ?? '' }}" class="header-right-txt"><i
-                                    class="icofont-facebook"></i></a>
-                            <a href="#" class="header-right-txt"><i class="icofont-twitter"></i></a>
-                            <a href="#" class="header-right-txt"><i class="icofont-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="offwrap"></div>
-    <!-- sidebar area end -->
-
-
-    <!-- HEADER SECTION STARTS HERE ↓ -->
-    <div class="tl-header">
-        <div class="container">
-            <div class="row g-0 align-items-center sticky-top">
-                <div class="col-xl-2 col-lg-2">
-                    <div class="row align-items-center">
-                        <div class="col-lg-12 col-6">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="{{ officeSetting()->institute_logo ?? '' }}" alt="KIDBA">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="d-lg-none d-flex justify-content-end col-6">
-                            <button class="tl-hamburger navbar-toggler">
-                                <i class="icofont-navigation-menu"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-8">
-                    <div class="tl-nav-menu">
-                        <ul class="justify-content-center">
-                            <li class="tl-nav-item ">
-                                <a href="#" role="button">
-                                    Home <i class="fa-regular"></i>
-                                </a>
-                            </li>
-                            <li class="tl-nav-item ">
-                                <a href="#" role="button">
-                                    About <i class="fa-regular"></i>
-                                </a>
-                            </li>
-                            <li class="tl-nav-item ">
-                                <a href="#" role="button">
-                                    Services <i class="fa-regular"></i>
-                                </a>
-                            </li>
-                            <li class="tl-nav-item ">
-                                <a href="#" role="button">
-                                    Courses <i class="fa-regular"></i>
-                                </a>
-                            </li>
-                            <li class="tl-nav-item ">
-                                <a href="#" role="button">
-                                    About Us <i class="fa-regular"></i>
-                                </a>
-                            </li>
-                            <li class="tl-nav-item ">
-                                <a href="#">Contact <i class="fa-regular"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-2 d-lg-block d-none">
-                    <div class="tl-header-actions kb-16-header-actions d-flex justify-content-end align-items-center">
-                        <a href="signin.html">Login</a>
-                        <a href="signup.html" class="tl-def-btn tl-14-def-btn"><i class="fa-regular fa-user"></i>
-                            Sign Up</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- HEADER SECTION ENDS HERE ↑ -->
-
-
-    <!-- BANNER SECTION STARTS HERE ↓ -->
-    <section class="tl-14-banner">
-        <div class="tl-14-banner-slider owl-carousel">
-            @foreach ($sliders as $slider)
-                <img class="tl-14-banner-slide" src="{{ $slider->image ?? '' }}" alt="Banner Background"
-                    style="width: 100%; height: auto; display: block;">
-            @endforeach
-        </div>
-        <div class="tl-14-banner-slider-nav" id="tl-14-banner-slider-nav"></div>
-
-        <div class="tl-14-banner-txt">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-10 col-xxs-12">
-                        <h1 class="tl-14-banner-title">Enhancing Learning with Language Models.</h1>
-                        <p class="tl-14-banner-descr">Through a combination of lectures, readings, and discussions,
-                            students will gain a solid foundation in educational psychology.</p>
-                        <form action="#" class="tl-14-banner-search-form">
-                            <input type="search" name="Search" class="tl-14-banner-search-field"
-                                id="tl-14-banner-search-field" placeholder="Search your course">
-                            <button type="submit" class="tl-def-btn tl-14-def-btn tl-14-banner-search-btn">Find
-                                course</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- BANNER SECTION ENDS HERE ↑ -->
-
-
-
-
-
-    <!-- CATEGORIES SECTION STARTS HERE ↓ -->
-    <div class="tl-3-programs-pills tl-14-categories pt-120 pb-120" data-bg-color="#F3F1F1">
-        <div class="container">
-            <h2 class="tl-14-section-title">Popular Categories</h2>
-
-            <div class="row tl-14-categories-row">
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-1.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Data Science</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-2.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Language</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-3.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Literature</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-4.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Biology</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-5.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Math's</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-6.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Development</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-7.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Drawing</h5>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 col-xxs-12">
-                    <a href="#" class="tl-3-single-program tl-14-category">
-                        <div class="tl-3-single-program-icon">
-                            <img src="{{ asset('assets/frontend/images/tl-3/icon-8.png') }}" alt="icon">
-                        </div>
-                        <h5 class="tl-3-single-program-title">Informatics</h5>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- CATEGORIES SECTION ENDS HERE ↑ -->
-
-
-    <!-- ABOUT SECTION STARTS HERE ↓ -->
-    <section class="tl-14-about pt-120 pb-120"
-        data-background="{{ asset('assets/frontend/images/tl-14/cta-bg.png') }}">
-        <div class="container">
-            <div class="row gy-4 align-items-center">
-                <div class="col-lg-6">
-                    <div class="tl-14-about-img">
-                        <img src="{{ asset('assets/frontend/images/tl-14/about-img.jpg') }}" alt="Image">
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="tl-14-about-txt">
-                        <h6 class="tl-13-about-sub-title">Next Level Learning</h6>
-                        <h2 class="tl-14-section-title">Potential Online Learning Management System.</h2>
-                        <p class="tl-14-about-descr">Mauris sit amet lacinia est, vitae tristique metus. Nulla
-                            facilisi. Mauris tempor nibh vitae pulvinar ultricies. Sed malesuada placerat metus. Vivamus
-                            sagittis arcu elit semper, eget varius turpis posuere.</p>
-
-                        <ul class="tl-14-about-service-list">
-                            <li>Admission & Records</li>
-                            <li>Board Agendas</li>
-                            <li>Career Interviews</li>
-                            <li>Register For Classes</li>
-                        </ul>
-
-                        <div class="tl-14-about-actions">
-                            <div class="tl-14-about-video">
-                                <a href="https://www.youtube.com/watch?v=PtLz0ZSKmBM&amp;feature=youtu.be"
-                                    data-fslightbox class="tl-14-about-video-btn"><i class="fa-solid fa-play"></i></a>
-                                <span class="tl-14-about-video-txt">Watch Video</span>
-                            </div>
-
-                            <div class="tl-14-about-achievement">
-                                <span class="achievement-num">23+</span>
-                                <span class="achievement-name">Years Experience</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ABOUT SECTION ENDS HERE ↑ -->
-
-
-    <!-- COURSES SECTION STARTS HERE ↓ -->
-    <div class="tl-14-courses pb-120 pt-120" data-bg-color="#F3F1F1">
-        <div class="container">
-            <h2 class="tl-14-section-title text-center">Our Popular Courses</h2>
-
-            <div class="tl-14-courses-row owl-carousel">
-                <div class="tl-12-course tl-14-course">
-                    <div class="tl-12-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-4/admission-bg.jpg') }}" alt="Course Image">
-                        <span class="tl-12-course-price">$53</span>
-                    </div>
-
-                    <div class="tl-12-course-txt">
-                        <div class="tl-12-course-info">
-                            <h6 class="tl-12-course-category">Mathematics</h6>
-                            <div class="tl-12-course-ratings">
-                                <span class="tl-12-course-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <span>(4.8 Rating)</span>
-                            </div>
-                        </div>
-                        <h4 class="tl-12-course-title"><a href="#">Teaching Math and Science Inquiry-Based
-                                Approaches</a></h4>
-                        <p class="tl-12-course-descr">There are many variations of passages of Lorem Ipsum available,
-                            but majority.</p>
-
-                        <div class="tl-14-course-footer">
-                            <div class="tl-12-course-stats">
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-book-blank"></i></span>
-                                    <span class="tl-12-course-stat-txt">6 Lessons</span>
-                                </div>
-
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-user-group"></i></span>
-                                    <span class="tl-12-course-stat-txt">32 Students</span>
-                                </div>
-                            </div>
-                            <a href="#" class="tl-12-course-btn"> View Course <i
-                                    class="fa-regular fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tl-12-course tl-14-course">
-                    <div class="tl-12-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-14/cta-img.jpg') }}" alt="Course Image">
-                        <span class="tl-12-course-price">$53</span>
-                    </div>
-
-                    <div class="tl-12-course-txt">
-                        <div class="tl-12-course-info">
-                            <h6 class="tl-12-course-category">Mathematics</h6>
-                            <div class="tl-12-course-ratings">
-                                <span class="tl-12-course-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <span>(4.8 Rating)</span>
-                            </div>
-                        </div>
-                        <h4 class="tl-12-course-title"><a href="#">Teaching Math and Science Inquiry-Based
-                                Approaches</a></h4>
-                        <p class="tl-12-course-descr">There are many variations of passages of Lorem Ipsum available,
-                            but majority.</p>
-
-                        <div class="tl-14-course-footer">
-                            <div class="tl-12-course-stats">
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-book-blank"></i></span>
-                                    <span class="tl-12-course-stat-txt">6 Lessons</span>
-                                </div>
-
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-user-group"></i></span>
-                                    <span class="tl-12-course-stat-txt">32 Students</span>
-                                </div>
-                            </div>
-                            <a href="#" class="tl-12-course-btn"> View Course <i
-                                    class="fa-regular fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tl-12-course tl-14-course">
-                    <div class="tl-12-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-13/about-img.jpg') }}" alt="Course Image">
-                        <span class="tl-12-course-price">$53</span>
-                    </div>
-
-                    <div class="tl-12-course-txt">
-                        <div class="tl-12-course-info">
-                            <h6 class="tl-12-course-category">Mathematics</h6>
-                            <div class="tl-12-course-ratings">
-                                <span class="tl-12-course-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <span>(4.8 Rating)</span>
-                            </div>
-                        </div>
-                        <h4 class="tl-12-course-title"><a href="#">Teaching Math and Science Inquiry-Based
-                                Approaches</a></h4>
-                        <p class="tl-12-course-descr">There are many variations of passages of Lorem Ipsum available,
-                            but majority.</p>
-
-                        <div class="tl-14-course-footer">
-                            <div class="tl-12-course-stats">
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-book-blank"></i></span>
-                                    <span class="tl-12-course-stat-txt">6 Lessons</span>
-                                </div>
-
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-user-group"></i></span>
-                                    <span class="tl-12-course-stat-txt">32 Students</span>
-                                </div>
-                            </div>
-                            <a href="#" class="tl-12-course-btn"> View Course <i
-                                    class="fa-regular fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tl-12-course tl-14-course">
-                    <div class="tl-12-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-13/about-img.jpg') }}" alt="Course Image">
-                        <span class="tl-12-course-price">$53</span>
-                    </div>
-
-                    <div class="tl-12-course-txt">
-                        <div class="tl-12-course-info">
-                            <h6 class="tl-12-course-category">Mathematics</h6>
-                            <div class="tl-12-course-ratings">
-                                <span class="tl-12-course-stars">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                                <span>(4.8 Rating)</span>
-                            </div>
-                        </div>
-                        <h4 class="tl-12-course-title"><a href="#">Teaching Math and Science Inquiry-Based
-                                Approaches</a></h4>
-                        <p class="tl-12-course-descr">There are many variations of passages of Lorem Ipsum available,
-                            but majority.</p>
-
-                        <div class="tl-14-course-footer">
-                            <div class="tl-12-course-stats">
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-book-blank"></i></span>
-                                    <span class="tl-12-course-stat-txt">6 Lessons</span>
-                                </div>
-
-                                <div class="tl-12-course-stat">
-                                    <span class="tl-12-course-stat-icon"><i
-                                            class="fa-regular fa-user-group"></i></span>
-                                    <span class="tl-12-course-stat-txt">32 Students</span>
-                                </div>
-                            </div>
-                            <a href="#" class="tl-12-course-btn"> View Course <i
-                                    class="fa-regular fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-6-slider-dots tl-14-slider-dots" id="tl-14-courses-slider-dots"></div>
-        </div>
-    </div>
-    <!-- COURSES SECTION ENDS HERE ↑ -->
-
-
-    <!-- SOFTWARE SECTION STARTS HERE ↓ -->
-    <section class="tl-14-software pt-120 pb-120">
-        <div class="container">
-            <h2 class="tl-14-section-title">Want to know More About The Costs of LMS Software?</h2>
-
-            <div class="tl-14-software-slider owl-carousel">
-                <div class="tl-14-software-slide tl-8-course" data-bg-color="#F3F1F1" data-dot="<button>01<button>">
-                    <div class="tl-8-course-txt">
-                        <span class="tl-14-software-slide-index">01</span>
-                        <h3 class="tl-8-course-title">Depending on Complexity of The LMS and Needs of The Organization
-                        </h3>
-                        <p class="tl-8-course-descr">Mauris sit amet lacinia est, vitae tristique metus. Nulla
-                            facilisi. Mauris tempor nibh vitae pulvinar ultricies. Sed malesuada placerat metus. Vivamus
-                            sagittis arcu elit semper, eget varius turpis posuere.</p>
-                        <a href="#" class="tl-def-btn tl-14-def-btn">Read The Article</a>
-                    </div>
-
-                    <div class="tl-8-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-14/about-img.jpg') }}" alt="About Image">
-                    </div>
-                </div>
-
-                <div class="tl-14-software-slide tl-8-course" data-bg-color="#F3F1F1" data-dot="<button>02<button>">
-                    <div class="tl-8-course-txt">
-                        <span class="tl-14-software-slide-index">02</span>
-                        <h3 class="tl-8-course-title">Depending on Complexity of The LMS and Needs of The Organization
-                        </h3>
-                        <p class="tl-8-course-descr">Mauris sit amet lacinia est, vitae tristique metus. Nulla
-                            facilisi. Mauris tempor nibh vitae pulvinar ultricies. Sed malesuada placerat metus. Vivamus
-                            sagittis arcu elit semper, eget varius turpis posuere.</p>
-                        <a href="#" class="tl-def-btn tl-14-def-btn">Read The Article</a>
-                    </div>
-
-                    <div class="tl-8-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-4/admission-bg.jpg') }}" alt="About Image">
-                    </div>
-                </div>
-
-                <div class="tl-14-software-slide tl-8-course" data-bg-color="#F3F1F1" data-dot="<button>03<button>">
-                    <div class="tl-8-course-txt">
-                        <span class="tl-14-software-slide-index">03</span>
-                        <h3 class="tl-8-course-title">Depending on Complexity of The LMS and Needs of The Organization
-                        </h3>
-                        <p class="tl-8-course-descr">Mauris sit amet lacinia est, vitae tristique metus. Nulla
-                            facilisi. Mauris tempor nibh vitae pulvinar ultricies. Sed malesuada placerat metus. Vivamus
-                            sagittis arcu elit semper, eget varius turpis posuere.</p>
-                        <a href="#" class="tl-def-btn tl-14-def-btn">Read The Article</a>
-                    </div>
-
-                    <div class="tl-8-course-img">
-                        <img src="{{ asset('assets/frontend/images/tl-1/banner-img.jpg') }}" alt="About Image">
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-14-software-slider-controls position-relative">
-                <div class="tl-14-slider-nav" id="tl-14-software-slider-nav"></div>
-                <div class="tl-14-software-slider-dots">
-                    <button>01</button>
-                    <button>02</button>
-                    <button>03</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SOFTWARE SECTION ENDS HERE ↑ -->
-
-
-    <!-- CTA(CALL TO ACTION) SECTION STARTS HERE ↓ -->
-    <section class="tl-14-cta" data-bg-color="var(--black)">
-        <div class="container">
-            <div class="row tl-14-cta-row align-items-center">
-                <div class="col-xxl-7 col-lg-6">
-                    <div class="tl-14-cta-img d-flex justify-content-end">
-                        <img src="{{ asset('assets/frontend/images/tl-14/cta-img.jpg') }}" alt="image">
-                    </div>
-                </div>
-
-                <div class="col-xxl-5 col-lg-6">
-                    <div class="tl-14-cta-txt">
-                        <h2 class="tl-14-section-title tl-14-cta-title">Empowering Organizations Through an Effective
-                            Learning Management System.</h2>
-                        <p class="tl-14-cta-descr">Mauris sit amet lacinia est, vitae tristique metus. Nulla facilisi.
-                        </p>
-                        <div class="tl-14-cta-btns">
-                            <a href="#" class="tl-def-btn tl-14-def-btn">Let’s Talk</a>
-                            <a href="#" class="tl-14-cta-btn-2">See Online Demo <i
-                                    class="fa-regular fa-arrow-right"></i></a>
-                        </div>
-
-                        <!-- vectors ↓ -->
-                        <div class="tl-14-cta-vectors">
-                            <img src="{{ asset('assets/frontend/images/tl-14/vector-1.png') }}" alt="Vector">
-                            <img src="{{ asset('assets/frontend/images/tl-14/vector-2.png') }}" alt="Vector">
-                            <img src="{{ asset('assets/frontend/images/tl-14/vector-3.png') }}" alt="Vector">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CTA(CALL TO ACTION) SECTION ENDS HERE ↑ -->
-
-
-    <!-- REVIEW SECTION STARTS HERE ↓ -->
-    <section class="tl-14-testimonial pt-120">
-        <div class="container">
-            <h2 class="tl-14-section-title">2340+ Teams Have Adopted The 360Learning Suite</h2>
-
-            <div class="tl-14-testimonial-slider">
-                <div class="tl-14-testimony">
-                    <img src="{{ asset('assets/frontend/images/tl-14/quote-icon.png') }}" alt="Quote Icon">
-                    <p class="tl-14-testimony-txt">I love that solvency lets us manage everything in one place. It's
-                        super helpful to be able to listen to voice samples, upload our own lists, and find quality
-                        salespeople that can grow with our team.</p>
-                </div>
-
-                <div class="tl-14-testimony">
-                    <img src="{{ asset('assets/frontend/images/tl-14/quote-icon.png') }}" alt="Quote Icon">
-                    <p class="tl-14-testimony-txt">I love that solvency lets us manage everything in one place. It's
-                        super helpful to be able to listen to voice samples, upload our own lists, and find quality
-                        salespeople that can grow with our team.</p>
-                </div>
-
-                <div class="tl-14-testimony">
-                    <img src="{{ asset('assets/frontend/images/tl-14/quote-icon.png') }}" alt="Quote Icon">
-                    <p class="tl-14-testimony-txt">I love that solvency lets us manage everything in one place. It's
-                        super helpful to be able to listen to voice samples, upload our own lists, and find quality
-                        salespeople that can grow with our team.</p>
-                </div>
-
-                <div class="tl-14-testimony">
-                    <img src="{{ asset('assets/frontend/images/tl-14/quote-icon.png') }}" alt="Quote Icon">
-                    <p class="tl-14-testimony-txt">I love that solvency lets us manage everything in one place. It's
-                        super helpful to be able to listen to voice samples, upload our own lists, and find quality
-                        salespeople that can grow with our team.</p>
-                </div>
-            </div>
-
-            <div class="tl-14-testimonial-users">
-                <div class="tl-14-testimony-user">
-                    <img src="{{ asset('assets/frontend/images/tl-4/user-1.jpg') }}" alt="reviewer image">
-                    <div class="tl-14-testimony-user-txt">
-                        <h6 class="tl-14-testimony-user-name">Desmond Eagle</h6>
-                        <span class="tl-14-testimony-user-label">Math Teacher</span>
-                    </div>
-                </div>
-
-                <div class="tl-14-testimony-user">
-                    <img src="{{ asset('assets/frontend/images/tl-4/user-2.jpg') }}" alt="reviewer image">
-                    <div class="tl-14-testimony-user-txt">
-                        <h6 class="tl-14-testimony-user-name">lauri max</h6>
-                        <span class="tl-14-testimony-user-label">Math Teacher</span>
-                    </div>
-                </div>
-
-                <div class="tl-14-testimony-user">
-                    <img src="{{ asset('assets/frontend/images/tl-4/user-3.jpg') }}" alt="reviewer image">
-                    <div class="tl-14-testimony-user-txt">
-                        <h6 class="tl-14-testimony-user-name">Yousouf abir</h6>
-                        <span class="tl-14-testimony-user-label">Math Teacher</span>
-                    </div>
-                </div>
-
-                <div class="tl-14-testimony-user">
-                    <img src="{{ asset('assets/frontend/images/tl-4/user-4.jpg') }}" alt="reviewer image">
-                    <div class="tl-14-testimony-user-txt">
-                        <h6 class="tl-14-testimony-user-name">Ishani shah</h6>
-                        <span class="tl-14-testimony-user-label">Math Teacher</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-1-stats">
-                <div class="tl-1-stat">
-                    <span class="tl-1-stat-num">29+</span>
-                    <h6 class="tl-1-stat-name">Year Experiences</h6>
-                </div>
-                <div class="tl-1-stat">
-                    <span class="tl-1-stat-num">5k+</span>
-                    <h6 class="tl-1-stat-name">Enrolled Learners</h6>
-                </div>
-                <div class="tl-1-stat">
-                    <span class="tl-1-stat-num">36+</span>
-                    <h6 class="tl-1-stat-name">Education Awards</h6>
-                </div>
-                <div class="tl-1-stat">
-                    <span class="tl-1-stat-num">8k+</span>
-                    <h6 class="tl-1-stat-name">Video Tutorials</h6>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- REVIEW SECTION ENDS HERE ↑ -->
-
-
-    <!-- TEACHERS START ↓ -->
-    <section class="tl-1-teachers pt-120 pb-120">
-        <div class="container">
-            <div class="tl-14-section-heading">
-                <h2 class="tl-14-section-title">Our Best Teachers.</h2>
-                <a href="#" class="tl-14-section-heading-action tl-def-btn tl-14-def-btn">View All member</a>
-            </div>
-
-            <div class="tl-1-teachers-slider owl-carousel" id="tl-14-teachers-slider">
-                <div class="tl-1-teacher tl-14-teacher">
-                    <img src="{{ asset('assets/frontend/images/tl-2/teacher-1.jpg') }}" alt="Teacher Image"
-                        class="tl-1-teacher-img">
-
-                    <div class="tl-1-teacher-info tl-14-teacher-info">
-                        <h5 class="tl-14-teacher-title"><a href="#">Nathaneal Down</a></h5>
-                        <h6 class="tl-14-teacher-sub-title">Music Teacher</h6>
-                    </div>
-                </div>
-
-                <div class="tl-1-teacher tl-14-teacher">
-                    <img src="{{ asset('assets/frontend/images/tl-2/teacher-2.jpg') }}" alt="Teacher Image"
-                        class="tl-1-teacher-img">
-
-                    <div class="tl-1-teacher-info tl-14-teacher-info">
-                        <h5 class="tl-14-teacher-title"><a href="#">Parsley Montana</a></h5>
-                        <h6 class="tl-14-teacher-sub-title">Math Teacher</h6>
-                    </div>
-                </div>
-
-                <div class="tl-1-teacher tl-14-teacher">
-                    <img src="{{ asset('assets/frontend/images/tl-2/teacher-3.jpg') }}" alt="Teacher Image"
-                        class="tl-1-teacher-img">
-
-                    <div class="tl-1-teacher-info tl-14-teacher-info">
-                        <h5 class="tl-14-teacher-title"><a href="#">Douglas Lyphe</a></h5>
-                        <h6 class="tl-14-teacher-sub-title">Art Teacher</h6>
-                    </div>
-                </div>
-
-                <div class="tl-1-teacher tl-14-teacher">
-                    <img src="{{ asset('assets/frontend/images/tl-2/teacher-2.jpg') }}" alt="Teacher Image"
-                        class="tl-1-teacher-img">
-
-                    <div class="tl-1-teacher-info tl-14-teacher-info">
-                        <h5 class="tl-14-teacher-title"><a href="#">Douglas Lyphe</a></h5>
-                        <h6 class="tl-14-teacher-sub-title">Art Teacher</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-6-slider-dots tl-14-slider-dots" id="tl-1-teachers-slider-dots"></div>
-        </div>
-    </section>
-    <!-- TEACHERS END ↑ -->
-
-
-    <!-- BLOGS SECTION STARTS HERE -->
-    <section class="tl-14-blogs tl-3-section-spacing" data-bg-color="#F3F1F1">
-        <div class="container">
-            <div class="tl-14-section-heading">
-                <h2 class="tl-14-section-title">Latest News Blogs & Articles.</h2>
-                <a href="#" class="tl-14-section-heading-action">View All Blog <i
-                        class="fa-regular fa-arrow-right"></i></a>
-            </div>
-
-            <div class="row g-xl-4 g-3 justify-content-center justify-content-md-around">
-                <div class="col-xl-6 col-lg-10 ">
-                    <div class="tl-single-blog tl-14-blog">
-                        <div class="tl-single-blog-img">
-                            <img src="{{ asset('assets/frontend/images/tl-4/blog-1.jpg') }}" alt="Blog Thumbnail">
-                        </div>
-
-                        <div class="tl-single-blog-txt tl-14-blog-txt">
-                            <ul class="tl-11-latest-article-infos tl-14-blog-infos">
-                                <li>March 24, 2023</li>
-                                <li>Education</li>
-                            </ul>
-                            <h4 class="tl-single-blog-title"><a href="#">The Role of LMS in Competency-Based
-                                    Fostering Development.</a></h4>
-                            <a class="tl-single-blog-btn" href="#">Read More <i
-                                    class="fa-regular fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-6 col-lg-10 ">
-                    <div class="tl-single-blog tl-14-blog">
-                        <div class="tl-single-blog-img">
-                            <img src="{{ asset('assets/frontend/images/tl-4/blog-2.jpg') }}" alt="Blog Thumbnail">
-                        </div>
-
-                        <div class="tl-single-blog-txt tl-14-blog-txt">
-                            <ul class="tl-11-latest-article-infos tl-14-blog-infos">
-                                <li>March 24, 2023</li>
-                                <li>Education</li>
-                            </ul>
-                            <h4 class="tl-single-blog-title"><a href="#">The Future of Education Exploring the
-                                    Role of LMS in Modern Learning.</a></h4>
-                            <a class="tl-single-blog-btn" href="#">Read More <i
-                                    class="fa-regular fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- BLOGS SECTION ENDS HERE -->
-
-
-    <!-- FOOTER SECTION STARTS HERE ↓ -->
-    <footer class="tl-footer tl-1-footer tl-14-footer">
-        <div class="container">
-            <div class="tl-footer-top">
-                <div class="row gy-5 justify-content-between">
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="tl-footer-widget tl-11-footer-widget">
-                            <a href="index.html" class="logo tl-footer-widget-title">
-                                <img src="{{ asset('assets/frontend/images/logos/tl-14-logo-light.png') }}"
-                                    alt="logo">
-                            </a>
-                            <p class="tl-1-footer-descr">Nullam nulla eget dui efficitur tempor sit amet quis magna,
-                                Suspendisse.</p>
-                            <div class="tl-1-footer-socials tl-14-footer-socials">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 order-1 order-sm-2 order-lg-1">
-                        <div class="row gy-5">
-                            <div class="col-6 col-xxs-12">
-                                <div class="tl-footer-widget tl-11-footer-widget">
-                                    <h5 class="tl-footer-widget-title">Our Campus</h5>
-                                    <ul class="tl-footer-links tl-14-footer-links">
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Courses</a></li>
-                                        <li><a href="#">Help Centre</a></li>
-                                        <li><a href="#">News</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-6 col-xxs-12">
-                                <div class="tl-footer-widget tl-11-footer-widget">
-                                    <h5 class="tl-footer-widget-title">Academics</h5>
-                                    <ul class="tl-footer-links tl-14-footer-links">
-                                        <li><a href="#">Programming</a></li>
-                                        <li><a href="#">Art &amp; Design</a></li>
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Engineering</a></li>
-                                        <li><a href="#">Photography</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6 col-12 order-2 order-sm-1 order-lg-2">
-                        <div class="tl-footer-widget tl-3-footer-widget">
-                            <h5 class="tl-footer-widget-title">Subscribe</h5>
-                            <form action="#" class="tl-1-nwsltr-form">
-                                <input type="email" name="nwsltr-mail" id="tl-1-nwsltr-mail"
-                                    class="tl-1-nwsltr-mail-input" placeholder="Get news & updates">
-                                <button class="tl-1-nwsltr-btn" id="tl-1-nwsltr-btn">@</button>
-                            </form>
-                            <p class="tl-1-nwsltr-txt">Register now to get latest updates on promotions & coupons.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tl-footer-bottom tl-11-footer-bottom">
-                <div class="row gy-4 align-items-center">
-                    <div class="col-md-6">
-                        <p class="tl-1-copyright-txt m-0">Copyright &copy; 2023 All Rights Reserved by Kidba</p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <ul class="tl-1-footer-bottom-actions">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Term of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER SECTION ENDS HERE ↑ -->
-
-
-    <!-- JS FILES ↓ -->
-    <script src="{{ asset('assets/frontend/vendor/jquery/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/fs-lightbox/fslightbox.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/eocjs-newsticker/eocjs-newsticker.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/mean-menu/jquery.meanmenu.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/swiper-js/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/slick-slider/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/bx-slider/jquery.bxslider.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/eocjs-newsticker/eocjs-newsticker.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/syotimer/jquery.syotimer.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/vendor/mixitup/mixitup.min.js') }}"></script>
-    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $(".tl-14-banner-slider").owlCarousel({
-                // Your Owl Carousel options go here
-                items: 1,
-                loop: true,
-                nav: true,
-                // ... other options
-            });
-        });
-    </script>
-
+	<!-- Loder Start-->
+	<div class="loader-wrapper">
+	  <div class="loader"></div>
+	  <div class="loder-section left-section"></div>
+	  <div class="loder-section right-section"></div>
+	</div>
+	<!-- Loder End -->
+
+	<!--==================================================-->
+	<!----- Start	Techno Header Top Menu Area Css ----->
+	<!--==================================================-->
+	<div class="header_top_menu pt-2 pb-2 bg_color">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-sm-8">
+					<div class="header_top_menu_address">
+						<div class="header_top_menu_address_inner">
+							<ul>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>{{ officeSetting()->institute_email ??'' }}</a></li>
+								{{-- <li><a href="#"><i class="fa fa-map-marker"></i>{{ officeSetting()->institute_address ??'' }}</a></li> --}}
+								<li><a href="#"><i class="fa fa-phone"></i>{{ officeSetting()->institute_phone ??'' }}</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-4">
+					<div class="header_top_menu_icon">
+						<div class="header_top_menu_icon_inner">
+							<ul>
+								<li><a href="{{ officeSetting()->facebook_url??'' }}"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="{{ officeSetting()->twitter_url??'' }}"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End	Techno Header Top Menu Area Css ----->
+	<!--===================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Main Menu Area ----->
+	<!--==================================================-->
+	<div id="sticky-header" class="techno_nav_manu d-md-none d-lg-block d-sm-none d-none">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="menu">
+					<a href="index.html" class="logo"><img class="down" src="{{ officeSetting()->institute_logo ??'' }}" alt=""> <img class="main_sticky" src="{{ officeSetting()->institute_logo ??'' }}" alt=""></a>
+					<ul class="clearfix">
+						<li><a href="#">Home</a>
+						</li>
+						<li><a href="#">About</a>
+						</li>
+						<li><a href="#">Courses</a>
+						</li>
+						<li><a href="#">Gallery</a>
+						</li>
+						<li><a href="#">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Techno Mobile Menu Area -->
+	<div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
+		<div class="mobile-menu">
+			<nav class="techno_menu">
+				<ul class="clearfix">
+					<li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">About</a>
+                    </li>
+                    <li><a href="#">Courses</a>
+                    </li>
+                    <li><a href="#">Gallery</a>
+                    </li>
+                    <li><a href="#">Contact</a>
+                    </li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!--==================================================-->
+	<!----- End Techno Main Menu Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Slider Area ----->
+	<!--==================================================-->
+	<div class="slider_list owl-carousel">
+		<div class="slider_area d-flex align-items-center slider1" id="home">
+			<div class="container">
+				<div class="row">
+					<!--Start Single Portfolio -->
+					<div class="col-lg-12">
+						<div class="single_slider">
+							<div class="slider_content">
+								<div class="slider_text">
+
+									<div class="slider_text_inner wow fadeInLeft" data-wow-delay="0.3s">
+										<h5>Start learning from here</h5>
+										<h1>Passion Education and</h1>
+										<h1>Visa Service </h1>
+									</div>
+									<div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
+										<div class="button">
+											<a href="#">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
+										<div class="video-icon">
+											<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i class="fa fa-play"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slider_area d-flex align-items-center slider2" id="home">
+			<div class="container">
+				<div class="row">
+					<!--Start Single Portfolio -->
+					<div class="col-lg-12">
+						<div class="single_slider">
+							<div class="slider_content">
+								<div class="slider_text">
+									<div class="slider_text_inner wow fadeInLeft" data-wow-delay="0.3s">
+										<h5>Start learning from here</h5>
+										<h1>Passion Education and</h1>
+										<h1>Visa Service </h1>
+									</div>
+									<div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
+										<div class="button">
+											<a href="#">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+										</div>
+									</div>
+									<div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
+										<div class="video-icon">
+											<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i class="fa fa-play"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Slider Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Flipbox Top Feature Area ----->
+	<!--==================================================-->
+	<div class="flipbox_area top_feature">
+		<div class="container">
+			<div class="row nagative_margin">
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-global-1"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Provide All Kind Of IT Services</h3>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Provide All Kind Of IT Services</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Whether bringing new amazing products and services to market</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-data"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Solution For All IT Security</h3>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Solution For All IT Security</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Whether bringing new amazing products and services to market</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-interaction"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>All IT Consultancy Solution</h3>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>All IT Consultancy Solution</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Whether bringing new amazing products and services to market</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-developer"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Best Experience Engineer </h3>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Best Experience Engineer </h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Whether bringing new amazing products and services to market</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Flipbox Top Feature Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno About Area ----->
+	<!--==================================================-->
+	<div class="about_area pt-70 pb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 wow fadeInLeft" data-wow-delay="0.4s">
+					<div class="single_about_thumb mb-3">
+						<div class="single_about_thumb_inner">
+							<img src="{{asset('assets/frontend/images/about-img.png')}}" alt="" />
+						</div>
+					</div>
+					<div class="single_about_shape">
+						<div class="single_about_shape_thumb bounce-animate">
+							<img src="{{asset('assets/frontend/images/about-circle.png')}}" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-6">
+					<div class="section_title text_left mb-40 mt-3 wow fadeInRight" data-wow-delay="0.4s">
+						<div class="section_sub_title uppercase mb-3">
+							<h6>About Us</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>{{ $about->title ?? '' }}</h1>
+							<h1>Provide Best <span>IT Solutions.</span></h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+						<div class="section_content_text pt-4">
+							<p>We are privileged to work with hundred future thinking awesom business including many of the world’s top hardware</p>
+						</div>
+					</div>
+					<div class="singel_about_left mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="singel_about_left_inner mb-3">
+							<div class="about_icon mr-4">
+								<div class="icon mt-3">
+									<i class="flaticon-padlock"></i>
+								</div>
+							</div>
+							<div class="singel-about-content">
+								<h5>Warranty Management</h5>
+								<p>Morem Ipsum is simply dummy text of the printing and pepesetting found.</p>
+							</div>
+						</div>
+						<div class="singel_about_left_inner">
+							<div class="about_icon mr-4">
+								<div class="icon mt-3">
+									<i class="flaticon-code"></i>
+								</div>
+							</div>
+							<div class="singel-about-content">
+								<h5>Quality Control System</h5>
+								<p>Morem Ipsum is simply dummy text of the printing and pepesetting found.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno About Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Flipbox Area ----->
+	<!--==================================================-->
+
+	<div class="flipbox_area pt-85 pb-70" style="background-image:url('../assets/frontend/images/slider/slider-4.jpg');" >
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section_title text_center white mb-55 wow fadeInDown" data-wow-delay="0.4s">
+						<div class="section_sub_title uppercase mb-3">
+							<h6>SERVICES</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>Provide Exclusive Services</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-padlock"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Marketing Strategy</h3>
+									</div>
+									<div class="flipbox_desc">
+										<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back " style="background-image:url('../assets/frontend/images/feature1.jpg');">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Free Online Course</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+								</div>
+								<div class="flipbox_button">
+									<a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-intelligent"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Interior Design</h3>
+									</div>
+									<div class="flipbox_desc">
+										<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back " style="background-image:url('../assets/frontend/images/feature2.jpg');">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Interior Design</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+								</div>
+								<div class="flipbox_button">
+									<a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-code"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Digital Services</h3>
+									</div>
+									<div class="flipbox_desc">
+										<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back " style="background-image:url('../assets/frontend/images/feature3.jpg');">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Online Marketing</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+								</div>
+								<div class="flipbox_button">
+									<a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-content-writing"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Product Selling</h3>
+									</div>
+									<div class="flipbox_desc">
+										<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back " style="background-image:url('../assets/frontend/images/feature3.jpg');">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Online Product</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+								</div>
+								<div class="flipbox_button">
+									<a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-bar-chart"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Product Design</h3>
+									</div>
+									<div class="flipbox_desc">
+										<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back " style="background-image:url('../assets/frontend/images/feature1.jpg');">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>24/7 Support</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+								</div>
+								<div class="flipbox_button">
+									<a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+					<div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="techno_flipbox_font">
+								<div class="techno_flipbox_inner">
+									<div class="techno_flipbox_icon">
+										<div class="icon">
+											<i class="flaticon-business-and-finance"></i>
+										</div>
+									</div>
+									<div class="flipbox_title">
+										<h3>Digital Services</h3>
+									</div>
+									<div class="flipbox_desc">
+										<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+									</div>
+								</div>
+						</div>
+						<div class="techno_flipbox_back " style="background-image:url('../assets/frontend/images/feature2.jpg');">
+							<div class="techno_flipbox_inner">
+								<div class="flipbox_title">
+									<h3>Social Marketing</h3>
+								</div>
+								<div class="flipbox_desc">
+									<p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+								</div>
+								<div class="flipbox_button">
+									<a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--==================================================-->
+	<!----- End Techno Flipbox Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Team Area ----->
+	<!--==================================================-->
+	<div class="team_area pt-80 pb-75" style="background-image:url('../assets/frontend/images/team-bg2.jpg');" >
+		<div class="container">
+			<div class="row">
+				<!-- Start Section Tile -->
+				<div class="col-lg-9">
+					<div class="section_title text_left mb-50 mt-3 wow fadeInLeft" data-wow-delay="0.4s">
+
+						<div class="section_sub_title uppercase mb-3">
+							<h6>TEAM MEMBER</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>Our Awesome Creative</h1>
+							<h1>Team Member</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-lg-3">
+					<div class="section_button mt-50 wow fadeInRight" data-wow-delay="0.4s">
+						<div class="button two">
+							<a href="#">Join Our Team</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_team_thumb">
+							<img src="{{asset('assets/frontend/images/team1.jpg')}}" alt="" />
+							<div class="single_team_icon">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+						<div class="single_team_content">
+							<h4>David Malaan</h4>
+							<span>CEO</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_team_thumb">
+							<img src="{{asset('assets/frontend/images/team2.jpg')}}" alt="" />
+							<div class="single_team_icon">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+						<div class="single_team_content">
+							<h4>Andres Jhohne</h4>
+							<span>DIRECTOR</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_team_thumb">
+							<img src="{{asset('assets/frontend/images/team3.jpg')}}" alt="" />
+							<div class="single_team_icon">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+						<div class="single_team_content">
+							<h4>Michel Balak</h4>
+							<span>FOUNDER</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_team_thumb">
+							<img src="{{asset('assets/frontend/images/team4.jpg')}}" alt="" />
+							<div class="single_team_icon">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+						<div class="single_team_content">
+							<h4>Jemes Rodrigez</h4>
+							<span>MANAGER</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Team Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Case Study Area ----->
+	<!--==================================================-->
+	<div class="case_study_area pt-80" id="portfolio">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Start Section Tile -->
+				<div class="col-lg-12">
+					<div class="section_title text_center mb-50 mt-3 wow fadeInDown" data-wow-delay="0.4s">
+
+						<div class="section_sub_title uppercase mb-3">
+							<h6>FEATURES CASE</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>Our Latest Case Study</h1>
+							<h1>For Your Business</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 grid-item">
+					<div class="row">
+						<!--portfolio owl curousel -->
+						<div class="case_study_list owl-carousel curosel-style">
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/2.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Web Design</a></h2>
+											<span>Design, Photoshop</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/1.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Solution For Financial</a></h2>
+											<span>IT Server</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/8.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Solution For Financial</a></h2>
+											<span>IT Server</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/3.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Crazy Mood</a></h2>
+											<span>It Solution</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/4.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Logo Branding</a></h2>
+											<span>Branding</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/5.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Web Design</a></h2>
+											<span>Design, Photoshop</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/6.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Digital Marketing</a></h2>
+											<span>Business</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Start Single Portfolio -->
+							<div class="col-lg-12 pdn_0">
+								<div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_case_study_inner">
+										<div class="single_case_study_thumb">
+											<a href="case-study-details.html"><img src="{{asset('assets/frontend/images/galery/7.jpg')}}" alt="" /></a>
+										</div>
+									</div>
+									<div class="single_case_study_content">
+										<div class="single_case_study_content_inner">
+											<h2><a href="case-study-details.html">Photoshop Designer</a></h2>
+											<span>Photography</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Case Study Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno How IT Work Area ----->
+	<!--==================================================-->
+	<div class="how_it_work pt-50 pb-65">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 wow fadeInDown" data-wow-delay="0.4s">
+					<div class="section_title text_center mb-60 mt-3">
+
+						<div class="section_sub_title uppercase mb-3">
+							<h6>FEATURES CASE</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>Our Working Process</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single_it_work mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_it_work_content pl-2 pr-2">
+							<div class="single_it_work_content_list pb-5">
+								<span>1</span>
+							</div>
+							<div class="single_work_content_title pb-2">
+								<h4>Select A Project</h4>
+							</div>
+							<div class="single_it_work_content_text pt-1">
+								<p>We have the technology and industry expertise to develop solutions that can connect people and businesses across variety of mobile devices.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single_it_work mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_it_work_content pl-2 pr-2">
+							<div class="single_it_work_content_list pb-5">
+								<span>2</span>
+							</div>
+							<div class="single_work_content_title pb-2">
+								<h4>Project Analysis</h4>
+							</div>
+							<div class="single_it_work_content_text pt-1">
+								<p>We have the technology and industry expertise to develop solutions that can connect people and businesses across variety of mobile devices.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single_it_work mb-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="single_it_work_content pl-2 pr-2">
+							<div class="single_it_work_content_list three pb-5">
+								<span>3</span>
+							</div>
+							<div class="single_work_content_title pb-2">
+								<h4>Deliver Result</h4>
+							</div>
+							<div class="single_it_work_content_text pt-1">
+								<p>We have the technology and industry expertise to develop solutions that can connect people and businesses across variety of mobile devices.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno How IT Work Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Call Do Action Area ----->
+	<!--==================================================-->
+	<div class="call_do_action pt-85 pb-130 bg_color" style="background-image:url('../assets/frontend/images/call-bg.png');"  >
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="section_title white text_left mb-60 mt-3 wow fadeInLeft" data-wow-delay="0.4s">
+						<div class="phone_number mb-3">
+							<h5>+880 013 143 206</h5>
+						</div>
+						<div class="section_main_title">
+							<h1>To make requests for the</h1>
+							<h1>further information</h1>
+						</div>
+						<div class="button three mt-40">
+							<a href="#">Join With Now<i class="fa fa-long-arrow-right"></i></a>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="single-video mt-90 wow fadeInRight" data-wow-delay="0.4s">
+						<div class="video-icon">
+							<a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i class="fa fa-play"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Call Do Action Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Counter Area ----->
+	<!--==================================================-->
+	<div class="counter_area">
+		<div class="container">
+			<div class="row cntr_bg_up nagative_margin pt-50 pb-45 wow fadeInUp" data-wow-delay="0.4s">
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_counter text_center mb-4">
+						<div class="countr_text">
+							<h1><span class="counter">15</span><span>K</span> </h1>
+						</div>
+						<div class="counter_desc">
+							<h5>Happy Clients</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_counter text_center mb-4">
+						<div class="countr_text">
+							<h1><span class="counter">1280</span><span>+</span> </h1>
+						</div>
+						<div class="counter_desc">
+							<h5>Account Number</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_counter text_center mb-4">
+						<div class="countr_text">
+							<h1><span class="counter">10</span><span>K</span> </h1>
+						</div>
+						<div class="counter_desc">
+							<h5>Finished Projects</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-12">
+					<div class="single_counter text_center mb-4">
+						<div class="countr_text">
+							<h1><span class="counter">992</span><span>+</span> </h1>
+						</div>
+						<div class="counter_desc">
+							<h5>Win Awards</h5>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Counter Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Testimonial Area ----->
+	<!--==================================================-->
+	<div class="testimonial_area pt-80 pb-70">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section_title text_center mb-60 mt-3 wow fadeInRight" data-wow-delay="0.4s">
+
+						<div class="section_sub_title uppercase mb-3">
+							<h6>TESTIMONIAL</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>What Says</h1>
+							<h1>Our Happy Clients</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<!--testimonial owl curousel -->
+						<div class="testimonial_list owl-carousel curosel-style">
+							<!-- Start Single Testimonial -->
+							<div class="col-lg-12">
+								<div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_testimonial_content">
+										<div class="single_testimonial_content_text mb-4">
+											<p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno tempor.</p>
+										</div>
+										<div class="single_testimonial_thumb mt-2 mr-3">
+											<img src="{{asset('assets/frontend/images/testi1.jpg')}}" alt="" />
+										</div>
+										<div class="single_testimonial_content_title mt-4">
+											<h4>Jamal Vuiyan</h4>
+											<span>Founder</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Start Single Testimonial -->
+							<div class="col-lg-12">
+								<div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_testimonial_content">
+										<div class="single_testimonial_content_text mb-4">
+											<p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno tempor.</p>
+										</div>
+										<div class="single_testimonial_thumb mt-2 mr-3">
+											<img src="{{asset('assets/frontend/images/testi2.jpg')}}" alt="" />
+										</div>
+										<div class="single_testimonial_content_title mt-4">
+											<h4>Israt Jahan</h4>
+											<span>Developer</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Start Single Testimonial -->
+							<div class="col-lg-12">
+								<div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_testimonial_content">
+										<div class="single_testimonial_content_text mb-4">
+											<p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno tempor.</p>
+										</div>
+										<div class="single_testimonial_thumb mt-2 mr-3">
+											<img src="{{asset('assets/frontend/images/testi3.jpg')}}" alt="" />
+										</div>
+										<div class="single_testimonial_content_title mt-4">
+											<h4>Abrham Khan</h4>
+											<span>IT Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Start Single Testimonial -->
+							<div class="col-lg-12">
+								<div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
+									<div class="single_testimonial_content">
+										<div class="single_testimonial_content_text mb-4">
+											<p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno tempor.</p>
+										</div>
+										<div class="single_testimonial_thumb mt-2 mr-3">
+											<img src="{{asset('assets/frontend/images/testi2.jpg')}}" alt="" />
+										</div>
+										<div class="single_testimonial_content_title mt-4">
+											<h4>Clare Olsone</h4>
+											<span>Financial Manager</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Testimonial Area ----->
+	<!--==================================================-->
+
+
+	<!--==================================================-->
+	<!----- Start Techno Contact Area ----->
+	<!--==================================================-->
+	<div class="contact_area pt-85 pb-90" style="background-image:url('../assets/frontend/images/bg-cnt.jpg');" >
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section_title white text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.4s">
+						<div class="section_sub_title uppercase mb-3">
+							<h6>GET QUOTE</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>Make An</h1>
+							<h1>Free Consultant</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="quote_wrapper wow fadeInUp" data-wow-delay="0.4s">
+						<form id="contact_form" action="https://formspree.io/f/myyleorq" method="POST" id="dreamit-form" >
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form_box mb-30">
+										<input type="text" name="name"  placeholder="Name">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form_box mb-30">
+										<input type="email" name="email" placeholder="Email Address">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form_box mb-30">
+										<input type="text" name="phone" placeholder="Phone Number">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form_box mb-30">
+										<input type="text" name="web" placeholder="Website">
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div class="form_box mb-30">
+										<textarea name="message" id="message" cols="30" rows="10" placeholder="Write a Message"></textarea>
+									</div>
+									<div class="quote_btn text_center">
+										<button class="btn" type="submit">Free Consultancy</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div id="status"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Contact Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Blog Area ----->
+	<!--==================================================-->
+	<div class="blog_area pt-85 pb-65">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section_title text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.3s">
+						<div class="section_sub_title uppercase mb-3">
+							<h6>LATEST ARTICLE</h6>
+						</div>
+						<div class="section_main_title">
+							<h1>See Our Latest</h1>
+							<h1>Blog Posts</h1>
+						</div>
+						<div class="em_bar">
+							<div class="em_bar_bg"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="single_blog_thumb">
+							<a href="blog-details.html"><img src="{{asset('assets/frontend/images/blog1.jpg')}}" alt="" /></a>
+						</div>
+						<div class="single_blog_date">
+							<div class="single_blog_date_inner">
+								<h3>25</h3>
+								<span>DEC</span>
+								<span class="years">2023</span>
+							</div>
+						</div>
+						<div class="single_blog_content pt-4 pl-4 pr-4">
+							<div class="techno_blog_meta">
+								<a href="#">Techno </a>
+								<span class="meta-date pl-3">Corporate</span>
+							</div>
+							<div class="blog_page_title pb-1">
+								<h3><a href="blog-details.html">The five devices you need to work anytime</a></h3>
+							</div>
+							<div class="blog_description">
+								<p>Lorem ipsum dolor sit amet consectet adipisie cing elit sed eiusmod tempor incididunt on labore et dolore.  </p>
+							</div>
+							<div class="blog_page_button style_two pb-5">
+								<a href="blog-details.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="single_blog_thumb">
+							<a href="blog-details.html"><img src="{{asset('assets/frontend/images/blog2.jpg')}}" alt="" /></a>
+						</div>
+						<div class="single_blog_date color3">
+							<div class="single_blog_date_inner">
+								<h3>28</h3>
+								<span>DEC</span>
+								<span class="years">2023</span>
+							</div>
+						</div>
+						<div class="single_blog_content pt-4 pl-4 pr-4">
+							<div class="techno_blog_meta">
+								<a href="#">Techno </a>
+								<span class="meta-date pl-3">Business</span>
+							</div>
+							<div class="blog_page_title pb-1">
+								<h3><a href="blog-details.html">How to learn PHP 10 tips to get you started</a></h3>
+							</div>
+							<div class="blog_description">
+								<p>Lorem ipsum dolor sit amet consectet adipisie cing elit sed eiusmod tempor incididunt on labore et dolore.  </p>
+							</div>
+							<div class="blog_page_button style_two pb-5">
+								<a href="blog-details.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="single_blog_thumb">
+							<a href="blog-details.html"><img src="{{asset('assets/frontend/images/blog3.jpg')}}" alt="" /></a>
+						</div>
+						<div class="single_blog_date color2">
+							<div class="single_blog_date_inner">
+								<h3>22</h3>
+								<span>DEC</span>
+								<span class="years">2023</span>
+							</div>
+						</div>
+						<div class="single_blog_content pt-4 pl-4 pr-4">
+							<div class="techno_blog_meta">
+								<a href="#">Techno </a>
+								<span class="meta-date pl-3">Consulting</span>
+							</div>
+							<div class="blog_page_title pb-1">
+								<h3><a href="blog-details.html">The five devices you need to work anytime</a></h3>
+							</div>
+							<div class="blog_description">
+								<p>Lorem ipsum dolor sit amet consectet adipisie cing elit sed eiusmod tempor incididunt on labore et dolore.  </p>
+							</div>
+							<div class="blog_page_button style_two pb-5">
+								<a href="blog-details.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Blog Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Subscribe Area ----->
+	<!--==================================================-->
+	<div class="subscribe_area style_two">
+		<div class="container">
+			<div class="row sbc_bg_box wow fadeInUp" data-wow-delay="0.3s">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
+					<div class="subscribe_bg_box">
+						<div class="single_subscribe_contact">
+							<div class="subscribe_content_title white text_center pb-30">
+								<h2>Subscribe Our Newsletter</h2>
+							</div>
+							<form action="#">
+								<div class="subscribe_form">
+									<input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Enter Your Email">
+									<div class="help-block with-errors"></div>
+								</div>
+								<div class="subscribe_form_send">
+									<button type="submit" class="btn">
+										Subscribe
+									</button>
+									<div id="msgSubmit" class="h3 text-center hidden"></div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-1"></div>
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Subscribe Area ----->
+	<!--==================================================-->
+
+	<!--==================================================-->
+	<!----- Start Techno Footer Middle Area ----->
+	<!--==================================================-->
+	<div class="footer_middle_area footer_bg_shape bg_color4 pt-250 pb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+
+					<div class="footer_middle_social wow fadeInUp" data-wow-delay="0.3s">
+						<div class="footer_middle_social_icon">
+							<a class="color1" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="color2" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="color3" href="#"><i class="fa fa-linkedin"></i></a>
+							<a class="color4" href="#"><i class="fa fa-pinterest"></i></a>
+							<a class="color5" href="#"><i class="fa fa-linkedin"></i></a>
+							<a class="color6" href="#"><i class="fa fa-instagram"></i></a>
+							<a class="color7" href="#"><i class="fa fa-whatsapp"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<div class="footer_bottom_menu pt-5 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="footer_bottom_menu_inner">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="service-1.html">Service</a></li>
+								<li><a href="blog-gird.html">News</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer-bottom-content pt-4 text-center wow fadeInUp" data-wow-delay="0.3s">
+						<div class="footer-bottom-content-copy">
+							<p>© 2023 Techno.All Rights Reserved. </p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--==================================================-->
+	<!----- End Techno Footer Middle Area ----->
+	<!--==================================================-->
+
+	<!-- jquery js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/vendor/jquery-3.2.1.min.js')}}"></script>
+	<!-- bootstrap js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/bootstrap.min.js')}}"></script>
+	<!-- carousel js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/owl.carousel.min.js')}}"></script>
+	<!-- counterup js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/jquery.counterup.min.js')}}"></script>
+	<!-- waypoints js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/waypoints.min.js')}}"></script>
+	<!-- wow js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/wow.js')}}"></script>
+	<!-- imagesloaded js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/imagesloaded.pkgd.min.js')}}"></script>
+	<!-- venobox js -->
+	<script type="text/javascript" src="{{ asset('assets/frontend/venobox/venobox.js')}}"></script>
+	<!-- ajax mail js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/ajax-mail.js')}}"></script>
+	<!--  testimonial js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/testimonial.js')}}"></script>
+	<!--  animated-text js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/animated-text.js')}}"></script>
+	<!-- venobox min js -->
+	<script type="text/javascript" src="{{ asset('assets/frontend/venobox/venobox.min.js')}}"></script>
+	<!-- isotope js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/isotope.pkgd.min.js')}}"></script>
+	<!-- jquery nivo slider pack js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/jquery.nivo.slider.pack.js')}}"></script>
+	<!-- jquery meanmenu js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/jquery.meanmenu.js')}}"></script>
+	<!-- jquery scrollup js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/jquery.scrollUp.js')}}"></script>
+	<!-- theme js -->
+	<script type="text/javascript" src="{{asset('assets/frontend/js/theme.js')}}"></script>
+		<!-- jquery js -->
 </body>
 
-
-<!-- Mirrored from talim-html.codebasket.xyz/light/index-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Dec 2023 05:10:11 GMT -->
-
+<!-- Mirrored from html.ditsolution.net/techno/index-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jan 2024 15:40:52 GMT -->
 </html>
