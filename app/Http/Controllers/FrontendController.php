@@ -11,7 +11,7 @@ class FrontendController extends Controller
     public function index()
     {
         $sliders = Slider::all();
-        $about = About::first()->limit(1);
+        $about = About::first();
         return view('welcome',compact('sliders','about'));
     }
 
