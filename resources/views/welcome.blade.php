@@ -43,8 +43,33 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}" type="text/css" media="all" />
     <!-- modernizr js -->
     <script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <style>
+        .parallax {
+            position: relative;
+            overflow: hidden;
+        }
 
+        .parallax::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            z-index: -1;
+        }
+
+        .single_about_thumb_inner:hover img {
+            transform: scale(1.1);
+            /* Increase the scale factor as needed */
+            transition: transform 0.3s ease;
+            /* Add a smooth transition effect */
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Loder Start-->
@@ -156,23 +181,18 @@
     <!--==================================================-->
     <div class="slider_list owl-carousel">
         @foreach ($sliders as $slider)
-
-        <div class="slider_area d-flex align-items-center slider1" id="home">
-            <div class="container">
+            <div class="slider_area d-flex align-items-center slider1" id="home"
+                style="background-image: url('{{ $slider->image ?? '' }}'); background-size: cover; background-position: center;">
+                <div class="container">
                     <div class="row">
                         <!--Start Single Portfolio -->
-
                         <div class="col-lg-12">
                             <div class="single_slider">
                                 <div class="slider_content">
                                     <div class="slider_text">
-                                        <div>
-                                            <img src="{{ $slider->image ?? '' }}" style="width: 2000px; height: 1000px; display: block;" alt="">
-                                        </div>
                                         <div class="slider_text_inner wow fadeInLeft" data-wow-delay="0.3s">
                                             <h5>Start learning from here</h5>
-                                            <h1>{{ $slider->title }}</h1>
-                                            {{-- <h1>Visa Service </h1> --}}
+                                            <h1>{{ $slider->title ?? '' }}</h1>
                                         </div>
                                         <div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
                                             <div class="button">
@@ -191,46 +211,10 @@
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-        </div>
-        @endforeach
-
-
-        {{-- <div class="slider_area d-flex align-items-center slider2" id="home">
-            <div class="container">
-                <div class="row">
-                    <!--Start Single Portfolio -->
-                    <div class="col-lg-12">
-                        <div class="single_slider">
-                            <div class="slider_content">
-                                <div class="slider_text">
-                                    <div class="slider_text_inner wow fadeInLeft" data-wow-delay="0.3s">
-                                        <h5>Start learning from here</h5>
-                                        <h1>Passion Education and</h1>
-                                        <h1>Visa Service </h1>
-                                    </div>
-                                    <div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
-                                        <div class="button">
-                                            <a href="#">Contact Us <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
-                                        <div class="video-icon">
-                                            <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube"
-                                                data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i
-                                                    class="fa fa-play"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div> --}}
-
+        @endforeach
     </div>
     <!--==================================================-->
     <!----- End Techno Slider Area ----->
@@ -357,23 +341,30 @@
     <!--==================================================-->
     <!----- Start Techno About Area ----->
     <!--==================================================-->
+
     <div class="about_area pt-70 pb-100">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 wow fadeInLeft" data-wow-delay="0.4s">
                     <div class="single_about_thumb mb-3">
+                        <div class="single_about_thumb_inner" style="position: relative;">
 
-                        <div class="single_about_thumb_inner">
-                            <img src="{{ $about->about_image ?? '' }}" alt="" />
-                            <div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
+                            <!-- Image -->
+                            <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;"
+                                alt="" />
+
+                            <!-- Video Icon and Link -->
+                            <div class="slider-video wow fadeInUp" data-wow-delay="0.3s"
+                                style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
                                 <div class="video-icon">
                                     <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube"
-                                        data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i
-                                            class="fa fa-play"></i></a>
+                                        data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg">
+                                        <i class="fa fa-play"></i>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <div class="single_about_shape">
@@ -411,229 +402,65 @@
     <!--==================================================-->
     <!----- Start Techno Flipbox Area ----->
     <!--==================================================-->
-
-    <div class="flipbox_area pt-85 pb-70"
-        style="background-image:url('../assets/frontend/images/slider/slider-4.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text_center white mb-55 wow fadeInDown" data-wow-delay="0.4s">
-                        <div class="section_sub_title uppercase mb-3">
-                            <h6>SERVICES</h6>
-                        </div>
-                        <div class="section_main_title">
-                            <h1>Provide Exclusive Services</h1>
-                        </div>
-                        <div class="em_bar">
-                            <div class="em_bar_bg"></div>
+    @if (count($services) > 0)
+        <div class="flipbox_area parallax pt-85 pb-70"
+            style="background-image:url('../assets/frontend/images/slider/slider-4.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section_title text_center white mb-55 wow fadeInDown" data-wow-delay="0.4s">
+                            <div class="section_sub_title uppercase mb-3">
+                                <h6>SERVICES</h6>
+                            </div>
+                            <div class="section_main_title">
+                                <h1>Provide Exclusive Services</h1>
+                            </div>
+                            <div class="em_bar">
+                                <div class="em_bar_bg"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                    <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="techno_flipbox_font">
-                            <div class="techno_flipbox_inner">
-                                <div class="techno_flipbox_icon">
-                                    <div class="icon">
-                                        <i class="flaticon-padlock"></i>
+                <div class="row">
+                    @foreach ($services as $service)
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
+                            <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="techno_flipbox_font">
+                                    <div class="techno_flipbox_inner">
+                                        <div class="techno_flipbox_icon">
+                                            <div class="icon">
+                                                <i class="flaticon-padlock"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flipbox_title">
+                                            <h3>{{ $service->title }}</h3>
+                                        </div>
+                                        <div class="flipbox_desc">
+                                            <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flipbox_title">
-                                    <h3>Marketing Strategy</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="techno_flipbox_back "
-                            style="background-image:url('../assets/frontend/images/feature1.jpg');">
-                            <div class="techno_flipbox_inner">
-                                <div class="flipbox_title">
-                                    <h3>Free Online Course</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                                <div class="flipbox_button">
-                                    <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                    <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="techno_flipbox_font">
-                            <div class="techno_flipbox_inner">
-                                <div class="techno_flipbox_icon">
-                                    <div class="icon">
-                                        <i class="flaticon-intelligent"></i>
+                                <div class="techno_flipbox_back "
+                                    style="background-image:url('../assets/frontend/images/feature1.jpg');">
+                                    <div class="techno_flipbox_inner">
+                                        <div class="flipbox_title">
+                                            <h3>Free Online Course</h3>
+                                        </div>
+                                        <div class="flipbox_desc">
+                                            <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+                                        </div>
+                                        <div class="flipbox_button">
+                                            <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flipbox_title">
-                                    <h3>Interior Design</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
                             </div>
                         </div>
-                        <div class="techno_flipbox_back "
-                            style="background-image:url('../assets/frontend/images/feature2.jpg');">
-                            <div class="techno_flipbox_inner">
-                                <div class="flipbox_title">
-                                    <h3>Interior Design</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                                <div class="flipbox_button">
-                                    <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                    <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="techno_flipbox_font">
-                            <div class="techno_flipbox_inner">
-                                <div class="techno_flipbox_icon">
-                                    <div class="icon">
-                                        <i class="flaticon-code"></i>
-                                    </div>
-                                </div>
-                                <div class="flipbox_title">
-                                    <h3>Digital Services</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="techno_flipbox_back "
-                            style="background-image:url('../assets/frontend/images/feature3.jpg');">
-                            <div class="techno_flipbox_inner">
-                                <div class="flipbox_title">
-                                    <h3>Online Marketing</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                                <div class="flipbox_button">
-                                    <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                    <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="techno_flipbox_font">
-                            <div class="techno_flipbox_inner">
-                                <div class="techno_flipbox_icon">
-                                    <div class="icon">
-                                        <i class="flaticon-content-writing"></i>
-                                    </div>
-                                </div>
-                                <div class="flipbox_title">
-                                    <h3>Product Selling</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="techno_flipbox_back "
-                            style="background-image:url('../assets/frontend/images/feature3.jpg');">
-                            <div class="techno_flipbox_inner">
-                                <div class="flipbox_title">
-                                    <h3>Online Product</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                                <div class="flipbox_button">
-                                    <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                    <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="techno_flipbox_font">
-                            <div class="techno_flipbox_inner">
-                                <div class="techno_flipbox_icon">
-                                    <div class="icon">
-                                        <i class="flaticon-bar-chart"></i>
-                                    </div>
-                                </div>
-                                <div class="flipbox_title">
-                                    <h3>Product Design</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="techno_flipbox_back "
-                            style="background-image:url('../assets/frontend/images/feature1.jpg');">
-                            <div class="techno_flipbox_inner">
-                                <div class="flipbox_title">
-                                    <h3>24/7 Support</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                                <div class="flipbox_button">
-                                    <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-6">
-                    <div class="techno_flipbox mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="techno_flipbox_font">
-                            <div class="techno_flipbox_inner">
-                                <div class="techno_flipbox_icon">
-                                    <div class="icon">
-                                        <i class="flaticon-business-and-finance"></i>
-                                    </div>
-                                </div>
-                                <div class="flipbox_title">
-                                    <h3>Digital Services</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="techno_flipbox_back "
-                            style="background-image:url('../assets/frontend/images/feature2.jpg');">
-                            <div class="techno_flipbox_inner">
-                                <div class="flipbox_title">
-                                    <h3>Social Marketing</h3>
-                                </div>
-                                <div class="flipbox_desc">
-                                    <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
-                                </div>
-                                <div class="flipbox_button">
-                                    <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
-
+    @endif
     <!--==================================================-->
     <!----- End Techno Flipbox Area ----->
     <!--==================================================-->
@@ -641,6 +468,7 @@
     <!--==================================================-->
     <!----- Start Techno Team Area ----->
     <!--==================================================-->
+    @if (count($staffs) > 0)
     <div class="team_area pt-80 pb-75" style="background-image:url('../assets/frontend/images/team-bg2.jpg');">
         <div class="container">
             <div class="row">
@@ -671,80 +499,30 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($staffs as $staff)
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="single_team_thumb">
+                                <img src="{{ $staff->image ??''}}" height="250px;" alt="" />
+                                <div class="single_team_icon">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                            <div class="single_team_content">
+                                <h4>{{ $staff->full_name??'' }}</h4>
+                                <span>{{ $staff->post??'' }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="single_team_thumb">
-                            <img src="{{ asset('assets/frontend/images/team1.jpg') }}" alt="" />
-                            <div class="single_team_icon">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                        <div class="single_team_content">
-                            <h4>David Malaan</h4>
-                            <span>CEO</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="single_team_thumb">
-                            <img src="{{ asset('assets/frontend/images/team2.jpg') }}" alt="" />
-                            <div class="single_team_icon">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                        <div class="single_team_content">
-                            <h4>Andres Jhohne</h4>
-                            <span>DIRECTOR</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="single_team_thumb">
-                            <img src="{{ asset('assets/frontend/images/team3.jpg') }}" alt="" />
-                            <div class="single_team_icon">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                        <div class="single_team_content">
-                            <h4>Michel Balak</h4>
-                            <span>FOUNDER</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="single_team_thumb">
-                            <img src="{{ asset('assets/frontend/images/team4.jpg') }}" alt="" />
-                            <div class="single_team_icon">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </div>
-                        </div>
-                        <div class="single_team_content">
-                            <h4>Jemes Rodrigez</h4>
-                            <span>MANAGER</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+    @endif
     <!--==================================================-->
     <!----- End Techno Team Area ----->
     <!--==================================================-->
@@ -1107,6 +885,7 @@
     <!--==================================================-->
     <!----- Start Techno Testimonial Area ----->
     <!--==================================================-->
+    @if (count($testimonials) > 0)
     <div class="testimonial_area pt-80 pb-70">
         <div class="container">
             <div class="row">
@@ -1130,88 +909,28 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
-                        <!--testimonial owl curousel -->
                         <div class="testimonial_list owl-carousel curosel-style">
-                            <!-- Start Single Testimonial -->
+                            @foreach ($testimonials as $testimonial)
                             <div class="col-lg-12">
                                 <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
                                     <div class="single_testimonial_content">
                                         <div class="single_testimonial_content_text mb-4">
-                                            <p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut
-                                                a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno
-                                                tempor.</p>
+                                            <p>{{ $testimonial->description??'' }}</p>
                                         </div>
-                                        <div class="single_testimonial_thumb mt-2 mr-3">
-                                            <img src="{{ asset('assets/frontend/images/testi1.jpg') }}"
-                                                alt="" />
+                                        <div class="single_testimonial_thumb mt-2 mr-3" style="border-radius: 50%;">
+                                            <img src="{{ $testimonial->image }}" alt="" style="border-radius: 50%; height:100px; width:100px;" />
                                         </div>
+
                                         <div class="single_testimonial_content_title mt-4">
-                                            <h4>Jamal Vuiyan</h4>
-                                            <span>Founder</span>
+                                            <h4>{{ $testimonial->name }}</h4>
+                                            <span>{{ $testimonial->post }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Start Single Testimonial -->
-                            <div class="col-lg-12">
-                                <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_testimonial_content">
-                                        <div class="single_testimonial_content_text mb-4">
-                                            <p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut
-                                                a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno
-                                                tempor.</p>
-                                        </div>
-                                        <div class="single_testimonial_thumb mt-2 mr-3">
-                                            <img src="{{ asset('assets/frontend/images/testi2.jpg') }}"
-                                                alt="" />
-                                        </div>
-                                        <div class="single_testimonial_content_title mt-4">
-                                            <h4>Israt Jahan</h4>
-                                            <span>Developer</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Start Single Testimonial -->
-                            <div class="col-lg-12">
-                                <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_testimonial_content">
-                                        <div class="single_testimonial_content_text mb-4">
-                                            <p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut
-                                                a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno
-                                                tempor.</p>
-                                        </div>
-                                        <div class="single_testimonial_thumb mt-2 mr-3">
-                                            <img src="{{ asset('assets/frontend/images/testi3.jpg') }}"
-                                                alt="" />
-                                        </div>
-                                        <div class="single_testimonial_content_title mt-4">
-                                            <h4>Abrham Khan</h4>
-                                            <span>IT Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Start Single Testimonial -->
-                            <div class="col-lg-12">
-                                <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_testimonial_content">
-                                        <div class="single_testimonial_content_text mb-4">
-                                            <p>Dignissim per dis dignissim mi nibh a parturient habitasse suspendisse ut
-                                                a feugiat morbi neque don't is tortor.Tellus volutpat scelerisque techno
-                                                tempor.</p>
-                                        </div>
-                                        <div class="single_testimonial_thumb mt-2 mr-3">
-                                            <img src="{{ asset('assets/frontend/images/testi2.jpg') }}"
-                                                alt="" />
-                                        </div>
-                                        <div class="single_testimonial_content_title mt-4">
-                                            <h4>Clare Olsone</h4>
-                                            <span>Financial Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
+
 
                         </div>
                     </div>
@@ -1219,6 +938,7 @@
             </div>
         </div>
     </div>
+    @endif
     <!--==================================================-->
     <!----- End Techno Testimonial Area ----->
     <!--==================================================-->
@@ -1537,6 +1257,29 @@
     <!-- theme js -->
     <script type="text/javascript" src="{{ asset('assets/frontend/js/theme.js') }}"></script>
     <!-- jquery js -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var flipboxAreas = document.querySelectorAll('.parallax');
+
+            function updateParallax() {
+                flipboxAreas.forEach(function(area) {
+                    var boundingRect = area.getBoundingClientRect();
+                    var offset = window.pageYOffset - boundingRect.top;
+                    var speed = 0.5; // Adjust the parallax speed
+
+                    area.style.backgroundPositionY = offset * speed + "px";
+                });
+            }
+
+            // Initial call to set the background position on page load
+            updateParallax();
+
+            // Update the parallax effect on scroll
+            window.addEventListener("scroll", updateParallax);
+        });
+    </script>
+
 </body>
 
 <!-- Mirrored from html.ditsolution.net/techno/index-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jan 2024 15:40:52 GMT -->

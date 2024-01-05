@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Service;
 use App\Models\Slider;
-use Illuminate\Http\Request;
+use App\Models\Staff;
+use App\Models\Testimonial;
 
 class FrontendController extends Controller
 {
@@ -12,7 +14,9 @@ class FrontendController extends Controller
     {
         $sliders = Slider::all();
         $about = About::first();
-        return view('welcome',compact('sliders','about'));
+        $services = Service::take(6)->where('status', 1)->get();
+        $staffs = Staff::take(4)->where('status', 1)->get();
+        $testimonials = Testimonial::all();
+        return view('welcome', compact('sliders', 'about', 'services', 'staffs','testimonials'));
     }
-
 }
