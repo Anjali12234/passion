@@ -349,7 +349,7 @@
 							<h6>About Us</h6>
 						</div>
 						<div class="section_main_title">
-							<h1>{{ $about->title ?? '' }}</h1>
+							<h1>Preparing For Your Success</h1>
 							<h1>Provide Best <span>IT Solutions.</span></h1>
 						</div>
 						<div class="em_bar">
