@@ -436,18 +436,21 @@
                                             <h3>{{ $service->title }}</h3>
                                         </div>
                                         <div class="flipbox_desc">
-                                            <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+                                            <p>{!! Str::words($service->description ?? '', 150, '..') !!}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="techno_flipbox_back "
-                                    style="background-image:url('../assets/frontend/images/feature1.jpg');">
+                                    style="background-image:url('{{ $service->image??'' }}');">
                                     <div class="techno_flipbox_inner">
                                         <div class="flipbox_title">
-                                            <h3>Free Online Course</h3>
+                                            <h3>
+                                                <h3>{{ $service->title??'' }}</h3>
+                                            </h3>
                                         </div>
                                         <div class="flipbox_desc">
-                                            <p>Porem asum molor sit amet, consectetur adipiscing do miusmod tempor.</p>
+                                            <p>{!! Str::words($service->description ?? '', 150, '..') !!}</p>
+
                                         </div>
                                         <div class="flipbox_button">
                                             <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
