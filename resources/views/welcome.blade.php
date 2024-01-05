@@ -469,59 +469,59 @@
     <!----- Start Techno Team Area ----->
     <!--==================================================-->
     @if (count($staffs) > 0)
-    <div class="team_area pt-80 pb-75" style="background-image:url('../assets/frontend/images/team-bg2.jpg');">
-        <div class="container">
-            <div class="row">
-                <!-- Start Section Tile -->
-                <div class="col-lg-9">
-                    <div class="section_title text_left mb-50 mt-3 wow fadeInLeft" data-wow-delay="0.4s">
+        <div class="team_area pt-80 pb-75" style="background-image:url('../assets/frontend/images/team-bg2.jpg');">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Section Tile -->
+                    <div class="col-lg-9">
+                        <div class="section_title text_left mb-50 mt-3 wow fadeInLeft" data-wow-delay="0.4s">
 
-                        <div class="section_sub_title uppercase mb-3">
-                            <h6>TEAM MEMBER</h6>
-                        </div>
-                        <div class="section_main_title">
-                            <h1>Our Awesome Creative</h1>
-                            <h1>Team Member</h1>
-                        </div>
-                        <div class="em_bar">
-                            <div class="em_bar_bg"></div>
+                            <div class="section_sub_title uppercase mb-3">
+                                <h6>TEAM MEMBER</h6>
+                            </div>
+                            <div class="section_main_title">
+                                <h1>Our Awesome Creative</h1>
+                                <h1>Team Member</h1>
+                            </div>
+                            <div class="em_bar">
+                                <div class="em_bar_bg"></div>
+                            </div>
+
                         </div>
 
                     </div>
-
-                </div>
-                <div class="col-lg-3">
-                    <div class="section_button mt-50 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="button two">
-                            <a href="#">Join Our Team</a>
+                    <div class="col-lg-3">
+                        <div class="section_button mt-50 wow fadeInRight" data-wow-delay="0.4s">
+                            <div class="button two">
+                                <a href="#">Join Our Team</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                @foreach ($staffs as $staff)
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="single_team_thumb">
-                                <img src="{{ $staff->image ??''}}" height="250px;" alt="" />
-                                <div class="single_team_icon">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                <div class="row">
+                    @foreach ($staffs as $staff)
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="single_team mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="single_team_thumb">
+                                    <img src="{{ $staff->image ?? '' }}" height="250px;" alt="" />
+                                    <div class="single_team_icon">
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_team_content">
+                                    <h4>{{ $staff->full_name ?? '' }}</h4>
+                                    <span>{{ $staff->post ?? '' }}</span>
                                 </div>
                             </div>
-                            <div class="single_team_content">
-                                <h4>{{ $staff->full_name??'' }}</h4>
-                                <span>{{ $staff->post??'' }}</span>
-                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
+                </div>
             </div>
         </div>
-    </div>
     @endif
     <!--==================================================-->
     <!----- End Techno Team Area ----->
@@ -886,58 +886,60 @@
     <!----- Start Techno Testimonial Area ----->
     <!--==================================================-->
     @if (count($testimonials) > 0)
-    <div class="testimonial_area pt-80 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text_center mb-60 mt-3 wow fadeInRight" data-wow-delay="0.4s">
+        <div class="testimonial_area pt-80 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section_title text_center mb-60 mt-3 wow fadeInRight" data-wow-delay="0.4s">
 
-                        <div class="section_sub_title uppercase mb-3">
-                            <h6>TESTIMONIAL</h6>
-                        </div>
-                        <div class="section_main_title">
-                            <h1>What Says</h1>
-                            <h1>Our Happy Clients</h1>
-                        </div>
-                        <div class="em_bar">
-                            <div class="em_bar_bg"></div>
-                        </div>
+                            <div class="section_sub_title uppercase mb-3">
+                                <h6>TESTIMONIAL</h6>
+                            </div>
+                            <div class="section_main_title">
+                                <h1>What Says</h1>
+                                <h1>Our Happy Clients</h1>
+                            </div>
+                            <div class="em_bar">
+                                <div class="em_bar_bg"></div>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
-                        <div class="testimonial_list owl-carousel curosel-style">
-                            @foreach ($testimonials as $testimonial)
-                            <div class="col-lg-12">
-                                <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_testimonial_content">
-                                        <div class="single_testimonial_content_text mb-4">
-                                            <p>{{ $testimonial->description??'' }}</p>
-                                        </div>
-                                        <div class="single_testimonial_thumb mt-2 mr-3" style="border-radius: 50%;">
-                                            <img src="{{ $testimonial->image }}" alt="" style="border-radius: 50%; height:100px; width:100px;" />
-                                        </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="testimonial_list owl-carousel curosel-style">
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="col-lg-12">
+                                        <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
+                                            <div class="single_testimonial_content">
+                                                <div class="single_testimonial_content_text mb-4">
+                                                    <p>{{ $testimonial->description ?? '' }}</p>
+                                                </div>
+                                                <div class="single_testimonial_thumb mt-2 mr-3"
+                                                    style="border-radius: 50%;">
+                                                    <img src="{{ $testimonial->image }}" alt=""
+                                                        style="border-radius: 50%; height:100px; width:100px;" />
+                                                </div>
 
-                                        <div class="single_testimonial_content_title mt-4">
-                                            <h4>{{ $testimonial->name }}</h4>
-                                            <span>{{ $testimonial->post }}</span>
+                                                <div class="single_testimonial_content_title mt-4">
+                                                    <h4>{{ $testimonial->name }}</h4>
+                                                    <span>{{ $testimonial->post }}</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
+
+
+
                             </div>
-                            @endforeach
-
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     @endif
     <!--==================================================-->
     <!----- End Techno Testimonial Area ----->
@@ -957,10 +959,17 @@
                         </div>
                         <div class="section_main_title">
                             <h1>Make An</h1>
-                            <h1>Free Consultant</h1>
+                            <h1>Contact With Us</h1>
                         </div>
                         <div class="em_bar">
                             <div class="em_bar_bg"></div>
+                        </div>
+                        <div>
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success">
+                                    <p>{{ $message }}</p>
+                                </div>
+                            @endif
                         </div>
 
                     </div>
@@ -969,33 +978,68 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="quote_wrapper wow fadeInUp" data-wow-delay="0.4s">
-                        <form id="contact_form" action="https://formspree.io/f/myyleorq" method="POST"
+                        <form id="contact_form" action="{{ route('admin.contact.store') }}" method="POST"
                             id="dreamit-form">
+                            @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form_box mb-30">
                                         <input type="text" name="name" placeholder="Name">
+                                        <span class="text-warning">
+                                            @error('name')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form_box mb-30">
                                         <input type="email" name="email" placeholder="Email Address">
+                                        <span class="text-warning">
+                                            @error('email')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form_box mb-30">
-                                        <input type="text" name="phone" placeholder="Phone Number">
+                                        <input type="number" name="phone" placeholder="Phone Number">
+                                        <span class="text-warning">
+                                            @error('phone')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form_box mb-30">
-                                        <input type="text" name="web" placeholder="Website">
+                                        <input type="text" name="subject" placeholder="Subject">
+                                        <span class="text-warning">
+                                            @error('subject')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="form_box mb-30">
                                         <textarea name="message" id="message" cols="30" rows="10" placeholder="Write a Message"></textarea>
+                                        <span class="text-warning">
+                                            @error('message')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                     <div class="quote_btn text_center">
                                         <button class="btn" type="submit">Free Consultancy</button>

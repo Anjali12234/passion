@@ -26,6 +26,7 @@
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->phone }}</td>
                                 <td>{{ $contact->email }}</td>
+                                <td>{{ $contact->subject }}</td>
                                 <td>{{ $contact->message }}</td>
 
                                 <td>
