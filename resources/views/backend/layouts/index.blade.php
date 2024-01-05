@@ -4,7 +4,7 @@
         <h2 class="h3 mb-0">Hospital Overview</h2>
     </div>
     <div style="min-height: 60vh;">
-
+        $notifications = auth()->user()->unreadNotifications;
         <div class="row pb-10">
             <div class="col-xl-3 col-lg-3 col-md-6 mb-20">
                 <div class="card-box height-100-p widget-style3">
