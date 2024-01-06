@@ -22,15 +22,6 @@
                 <form action="{{ route('admin.staff.update',$staff) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label for="full_name">Full Name *</label>

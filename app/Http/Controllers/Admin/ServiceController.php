@@ -16,7 +16,6 @@ class ServiceController extends Controller
         return view('backend.service.index', compact('services'));
     }
 
-
     public function create()
     {
         return view('backend.service.create');
@@ -28,8 +27,6 @@ class ServiceController extends Controller
         toast('Service added successfully ', 'success');
         return redirect(route('admin.service.index'));
     }
-
-
 
     public function edit(Service $service)
     {

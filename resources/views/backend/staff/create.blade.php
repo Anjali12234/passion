@@ -21,15 +21,6 @@
                 </div>
                 <form action="{{ route('admin.staff.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label for="full_name">Full Name *</label>
@@ -89,16 +80,6 @@
                                 @enderror
                             </span>
                         </div>
-                        {{-- <div class="col-sm-6 form-group">
-                            <label for="gender"> Gender*</label>
-
-                            <input class="form-control" id="gender" type="radio" name="gender">
-                            <span class="text-warning">
-                                @error('gender')
-                                    {{ $message }}
-                                @enderror
-                            </span>
-                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-sm-6 form-group">
