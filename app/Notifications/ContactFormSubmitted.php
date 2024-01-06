@@ -2,19 +2,20 @@
 
 namespace App\Notifications;
 
+use App\Models\ContactUs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class ContactFormSubmitted extends Notification
+class ContactFormSubmitted extends Notification implements ShouldQueue
 {
     use Queueable;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct(public ContactUs $contact)
     {
         //
     }
@@ -24,9 +25,9 @@ class ContactFormSubmitted extends Notification
      *
      * @return array<int, string>
      */
-    public function via(object $notifiable): array
+    public function via( $notifiable): array
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -36,7 +37,7 @@ class ContactFormSubmitted extends Notification
     {
         return (new MailMessage)
         ->line('The contact form has been submitted.')
-        ->action('View Contact Form', url('/admin/dashboard'))
+        ->action('Notification Action', url('/'))
         ->line('Thank you!');
     }
 
@@ -48,7 +49,7 @@ class ContactFormSubmitted extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'name' => $this->contact->name ??''
         ];
     }
 }
