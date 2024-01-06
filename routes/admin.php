@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PopUpController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
@@ -25,6 +26,8 @@ Route::resource('slider', SliderController::class);
 Route::resource('testimonial', TestimonialController::class);
 Route::resource('staff', StaffController::class);
 Route::put('staff/{staff}/updatestaffStatus', [StaffController::class, 'updateStatus'])->name('staff.updateStaffStatus');
+Route::resource('popUp', PopUpController::class);
+Route::put('popUp/{popUp}/updatePopUpStatus', [PopUpController::class, 'updateStatus'])->name('popUp.updatePopUpStatus');
 
 
 

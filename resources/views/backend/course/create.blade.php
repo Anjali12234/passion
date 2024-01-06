@@ -21,15 +21,6 @@
                 </div>
                 <form action="{{ route('admin.course.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="col-sm-6 form-group">
                         <label for="title">Title *</label>
                         <input class="form-control" id="title" type="text" name="title"

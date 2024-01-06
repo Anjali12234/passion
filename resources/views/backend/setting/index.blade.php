@@ -12,16 +12,6 @@
                 </div>
                 <form action="{{ route('admin.officeSetting.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label for="institute_name">Name Of Institute *</label>

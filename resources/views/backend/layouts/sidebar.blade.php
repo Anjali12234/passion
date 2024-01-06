@@ -54,6 +54,12 @@
                     </a>
 
                 </li>
+                <li class="dropdown">
+                    <a href="{{ route('admin.popUp.index') }}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-bug"></span
+                        ><span class="mtext">Pop Up</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
