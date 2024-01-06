@@ -7,6 +7,7 @@ use App\Http\Requests\ContactUS\StoreContactUsRequest;
 use App\Models\ContactUs;
 use App\Models\User;
 use App\Notifications\ContactFormSubmitted;
+use Illuminate\Support\Facades\Notification;
 
 class ContactUsController extends Controller
 {
@@ -18,9 +19,9 @@ class ContactUsController extends Controller
 
     public function store(StoreContactUsRequest $request)
     {
+        $user = User::first();
         $contact = ContactUs::create($request->validated());
-        // $adminUser = User::where('email', 'admin@admin.com')->first();
-        // $adminUser->notify(new ContactFormSubmitted($contact));
+        Notification::send($user, new ContactFormSubmitted($contact) );
         return back()
             ->with('success', 'Feedback  has been sent successfully.');
     }
@@ -28,6 +29,14 @@ class ContactUsController extends Controller
     public function destroy(ContactUs $contact)
     {
         $contact->delete();
+        return back();
+    }
+
+    public function deleteNotification(ContactUs $contact)
+    {
+        $contact->update([
+            'notificable_id' => !$contact->notificable_d
+        ]);
         return back();
     }
 }
