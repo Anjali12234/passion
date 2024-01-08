@@ -9,9 +9,9 @@
                             src="{{ officeSetting()->institute_logo ?? '' }}" alt=""> <img class="main_sticky"
                             src="{{ officeSetting()->institute_logo ?? '' }}" alt=""></a>
                     <ul class="clearfix">
-                        <li><a href="#">Home</a>
+                        <li><a href="{{ route('index') }}">Home</a>
                         </li>
-                        <li><a href="#">About</a>
+                        <li><a href="{{ route('about') }}">About</a>
                         </li>
                         <li><a href="#">Courses</a>
                         </li>
@@ -30,9 +30,9 @@
         <div class="mobile-menu">
             <nav class="techno_menu">
                 <ul class="clearfix">
-                    <li><a href="#">Home</a>
+                    <li><a href="{{ route('index') }}">Home</a>
                     </li>
-                    <li><a href="#">About</a>
+                    <li><a href="{{ route('about') }}">About</a>
                     </li>
                     <li><a href="#">Courses</a>
                     </li>

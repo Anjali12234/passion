@@ -24,6 +24,7 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('frontend.about');
+        $about = About::first();
+        return view('frontend.about',compact('about'));
     }
 }
