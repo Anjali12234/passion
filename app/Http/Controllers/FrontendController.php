@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Course;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Staff;
@@ -17,6 +18,7 @@ class FrontendController extends Controller
         $services = Service::take(6)->where('status', 1)->get();
         $staffs = Staff::take(4)->where('status', 1)->get();
         $testimonials = Testimonial::all();
-        return view('welcome', compact('sliders', 'about', 'services', 'staffs','testimonials'));
+        $courses=Course::all();
+        return view('welcome', compact('sliders', 'about', 'services', 'staffs','testimonials','courses'));
     }
 }
