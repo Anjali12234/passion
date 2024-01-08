@@ -555,10 +555,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 grid-item">
-
                     <div class="row">
                         <!--portfolio owl curousel -->
-
                         <div class="case_study_list owl-carousel curosel-style">
                             <!--Start Single Portfolio -->
                             @foreach ($courses as $course)
@@ -568,13 +566,26 @@
                                         <div class="single_case_study_inner">
                                             <div class="single_case_study_thumb">
                                                 <a href="case-study-details.html"><img src="{{ $course->image }}"
-                                                        alt="" /></a>
+                                                        alt="" style="height: 270px; width:370;" /></a>
                                             </div>
                                         </div>
                                         <div class="single_case_study_content">
                                             <div class="single_case_study_content_inner">
-                                                <h2><a href="case-study-details.html"></a>{{ $course->title }}</h2>
-                                                <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span>
+                                                <div class="row">
+                                                    <div class="col-md-4 text-center mt-2"
+                                                        style="border-right: 1.5px solid #0b24e3;padding-right: 15px;">
+                                                        {{ $course->time }}
+                                                    </div>
+                                                    <div class="col-md-4 text-center"
+                                                        style="border-right: 1.5px solid #0b24e3;padding-right: 15px;">
+                                                        {{ $course->title }}
+                                                    </div>
+                                                    <div class="col-md-4 text-center">
+                                                        {{ $course->price }}
+                                                    </div>
+                                                </div>
+                                                {{-- <h2><a href="case-study-details.html"></a>{{ $course->title }}</h2> --}}
+                                                {{-- <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -822,7 +833,8 @@
     <!--==================================================-->
     <!----- Start Techno Contact Area ----->
     <!--==================================================-->
-    <div class="contact_area pt-85 pb-90 parallax" style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size:cover;">
+    <div class="contact_area pt-85 pb-90 parallax"
+        style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -1065,11 +1077,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="widget widgets-company-info">
                         <div class="footer-bottom-logo pb-40">
-                            <img src="  {{ officeSetting()->institute_logo ?? '' }}" style="height: 90px; width:100px;" alt="" />
+                            <img src="  {{ officeSetting()->institute_logo ?? '' }}"
+                                style="height: 90px; width:100px;" alt="" />
                         </div>
                         <div class="company-info-desc">
                             <p>
-                                {{ Str::limit(strip_tags(officeSetting()->description ?? ''), $limit = 100,'') }}
+                                {{ Str::limit(strip_tags(officeSetting()->description ?? ''), $limit = 100, '') }}
                             </p>
                         </div>
                         <div class="follow-company-info pt-3">
@@ -1093,7 +1106,7 @@
                         <div class="menu-quick-link-container ml-4">
                             <ul id="menu-quick-link" class="menu">
                                 @foreach (services() as $service)
-                                <li><a href="#">{{$service->title}}</a></li>
+                                    <li><a href="#">{{ $service->title }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -1110,10 +1123,10 @@
                             <p><span>Address :</span> {{ officeSetting()->institute_address ?? '' }}</p>
                         </div>
                         <div class="footer-social-info">
-                            <p><span>Phone :</span>  {{ officeSetting()->institute_phone ?? '' }}</p>
+                            <p><span>Phone :</span> {{ officeSetting()->institute_phone ?? '' }}</p>
                         </div>
                         <div class="footer-social-info">
-                            <p><span>Email :</span>  {{ officeSetting()->institute_email ?? '' }}</p>
+                            <p><span>Email :</span> {{ officeSetting()->institute_email ?? '' }}</p>
                         </div>
 
                     </div>
@@ -1122,8 +1135,12 @@
                     <div id="em-recent-post-widget">
                         <div class="single-widget-item">
                             <h4 class="widget-title pb-3">Popular Post</h4>
-                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpassionnpj&width=500&show_text=true&height=202&appId" width="350" height="402" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                            
+                            <iframe
+                                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpassionnpj&width=500&show_text=true&height=202&appId"
+                                width="350" height="402" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
 
                         </div>
                     </div>
