@@ -404,7 +404,7 @@
     <!--==================================================-->
     @if (count($services) > 0)
         <div class="flipbox_area parallax pt-85 pb-70"
-            style="background-image:url('../assets/frontend/images/slider/slider-4.jpg');">
+            style="background-image:url('../assets/frontend/images/slider/bg2.jpg'); background-size:cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -441,11 +441,11 @@
                                     </div>
                                 </div>
                                 <div class="techno_flipbox_back "
-                                    style="background-image:url('{{ $service->image??'' }}');">
+                                    style="background-image:url('{{ $service->image ?? '' }}');">
                                     <div class="techno_flipbox_inner">
                                         <div class="flipbox_title">
                                             <h3>
-                                                <h3>{{ $service->title??'' }}</h3>
+                                                <h3>{{ $service->title ?? '' }}</h3>
                                             </h3>
                                         </div>
                                         <div class="flipbox_desc">
@@ -550,164 +550,38 @@
                         <div class="em_bar">
                             <div class="em_bar_bg"></div>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 grid-item">
+
                     <div class="row">
                         <!--portfolio owl curousel -->
+
                         <div class="case_study_list owl-carousel curosel-style">
                             <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/2.jpg') }}"
-                                                    alt="" /></a>
+                            @foreach ($courses as $course)
+                                <div class="col-lg-12 pdn_0">
+                                    <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s"
+                                        style="padding: 10px;">
+                                        <div class="single_case_study_inner">
+                                            <div class="single_case_study_thumb">
+                                                <a href="case-study-details.html"><img src="{{ $course->image }}"
+                                                        alt="" /></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Web Design</a></h2>
-                                            <span>Design, Photoshop</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/1.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Solution For Financial</a></h2>
-                                            <span>IT Server</span>
+                                        <div class="single_case_study_content">
+                                            <div class="single_case_study_content_inner">
+                                                <h2><a href="case-study-details.html"></a>{{ $course->title }}</h2>
+                                                <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/8.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Solution For Financial</a></h2>
-                                            <span>IT Server</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/3.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Crazy Mood</a></h2>
-                                            <span>It Solution</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/4.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Logo Branding</a></h2>
-                                            <span>Branding</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/5.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Web Design</a></h2>
-                                            <span>Design, Photoshop</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/6.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Digital Marketing</a></h2>
-                                            <span>Business</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Start Single Portfolio -->
-                            <div class="col-lg-12 pdn_0">
-                                <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="single_case_study_inner">
-                                        <div class="single_case_study_thumb">
-                                            <a href="case-study-details.html"><img
-                                                    src="{{ asset('assets/frontend/images/galery/7.jpg') }}"
-                                                    alt="" /></a>
-                                        </div>
-                                    </div>
-                                    <div class="single_case_study_content">
-                                        <div class="single_case_study_content_inner">
-                                            <h2><a href="case-study-details.html">Photoshop Designer</a></h2>
-                                            <span>Photography</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -797,8 +671,8 @@
     <!--==================================================-->
     <!----- Start Techno Call Do Action Area ----->
     <!--==================================================-->
-    <div class="call_do_action pt-85 pb-130 bg_color"
-        style="background-image:url('../assets/frontend/images/call-bg.png');">
+    <div class="call_do_action pt-85 pb-130 bg_color parallax"
+        style="background-image:url('../assets/frontend/images/call-bg.png'); backgound-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
@@ -894,7 +768,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section_title text_center mb-60 mt-3 wow fadeInRight" data-wow-delay="0.4s">
-
                             <div class="section_sub_title uppercase mb-3">
                                 <h6>TESTIMONIAL</h6>
                             </div>
@@ -905,7 +778,6 @@
                             <div class="em_bar">
                                 <div class="em_bar_bg"></div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -935,8 +807,6 @@
                                     </div>
                                 @endforeach
 
-
-
                             </div>
                         </div>
                     </div>
@@ -952,7 +822,7 @@
     <!--==================================================-->
     <!----- Start Techno Contact Area ----->
     <!--==================================================-->
-    <div class="contact_area pt-85 pb-90" style="background-image:url('../assets/frontend/images/bg-cnt.jpg');">
+    <div class="contact_area pt-85 pb-90 parallax" style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size:cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -1184,84 +1054,98 @@
     <!----- End Techno Blog Area ----->
     <!--==================================================-->
 
-    <!--==================================================-->
-    <!----- Start Techno Subscribe Area ----->
-    <!--==================================================-->
-    <div class="subscribe_area style_two">
-        <div class="container">
-            <div class="row sbc_bg_box wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
-                    <div class="subscribe_bg_box">
-                        <div class="single_subscribe_contact">
-                            <div class="subscribe_content_title white text_center pb-30">
-                                <h2>Subscribe Our Newsletter</h2>
-                            </div>
-                            <form action="#">
-                                <div class="subscribe_form">
-                                    <input type="email" name="email" id="email" class="form-control"
-                                        required data-error="Please enter your email" placeholder="Enter Your Email">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="subscribe_form_send">
-                                    <button type="submit" class="btn">
-                                        Subscribe
-                                    </button>
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-        </div>
-    </div>
-    <!--==================================================-->
-    <!----- End Techno Subscribe Area ----->
-    <!--==================================================-->
 
     <!--==================================================-->
     <!----- Start Techno Footer Middle Area ----->
     <!--==================================================-->
-    <div class="footer_middle_area footer_bg_shape bg_color4 pt-250 pb-100">
+
+    <div class="footer-middle pt-95 parallax" style="background-image:url('../assets/frontend/images/call-bg.png')">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-
-                    <div class="footer_middle_social wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="footer_middle_social_icon">
-                            <a class="color1" href="#"><i class="fa fa-facebook"></i></a>
-                            <a class="color2" href="#"><i class="fa fa-twitter"></i></a>
-                            <a class="color3" href="#"><i class="fa fa-linkedin"></i></a>
-                            <a class="color4" href="#"><i class="fa fa-pinterest"></i></a>
-                            <a class="color5" href="#"><i class="fa fa-linkedin"></i></a>
-                            <a class="color6" href="#"><i class="fa fa-instagram"></i></a>
-                            <a class="color7" href="#"><i class="fa fa-whatsapp"></i></a>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="widget widgets-company-info">
+                        <div class="footer-bottom-logo pb-40">
+                            <img src="  {{ officeSetting()->institute_logo ?? '' }}" style="height: 90px; width:100px;" alt="" />
+                        </div>
+                        <div class="company-info-desc">
+                            <p>
+                                {{ Str::limit(strip_tags(officeSetting()->description ?? ''), $limit = 100,'') }}
+                            </p>
+                        </div>
+                        <div class="follow-company-info pt-3">
+                            <div class="follow-company-text mr-3">
+                                <a href="#">
+                                    <p>Follow Us</p>
+                                </a>
+                            </div>
+                            <div class="follow-company-icon">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-skype"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="footer_bottom_menu pt-5 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="footer_bottom_menu_inner">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="service-1.html">Service</a></li>
-                                <li><a href="blog-gird.html">News</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="widget widget-nav-menu">
+                        <h4 class="widget-title pb-4">Our Services</h4>
+                        <div class="menu-quick-link-container ml-4">
+                            <ul id="menu-quick-link" class="menu">
+                                @foreach (services() as $service)
+                                <li><a href="#">{{$service->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
-                    <div class="footer-bottom-content pt-4 text-center wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="footer-bottom-content-copy">
-                            <p>© 2023 Techno.All Rights Reserved. </p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="widget widgets-company-info">
+                        <h3 class="widget-title pb-4">Institute Address</h3>
+                        {{-- <div class="company-info-desc">
+                            <p>Porem awesome dolor sitework amet, consetur acing elit, sed do eiusmod ligal
+                            </p>
+                        </div> --}}
+                        <div class="footer-social-info">
+                            <p><span>Address :</span> {{ officeSetting()->institute_address ?? '' }}</p>
+                        </div>
+                        <div class="footer-social-info">
+                            <p><span>Phone :</span>  {{ officeSetting()->institute_phone ?? '' }}</p>
+                        </div>
+                        <div class="footer-social-info">
+                            <p><span>Email :</span>  {{ officeSetting()->institute_email ?? '' }}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div id="em-recent-post-widget">
+                        <div class="single-widget-item">
+                            <h4 class="widget-title pb-3">Popular Post</h4>
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpassionnpj&width=500&show_text=true&height=202&appId" width="350" height="402" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            
+
                         </div>
                     </div>
-
                 </div>
 
+            </div>
+            <div class="row footer-bottom mt-70 pt-3 pb-1">
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer-bottom-content">
+                        <div class="footer-bottom-content-copy">
+                            <p>© {{ now()->year }} Techno.All Rights Reserved. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="footer-bottom-right">
+                        <div class="footer-bottom-right-text">
+                            <a class="absod" href="#">Privacy Policy </a>
+                            <a href="#"> Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -36,8 +36,10 @@ Version: 0.1
 27. techno Error Page Area Css
 25. techno Team Details Area Css
 
+
 =======================*/
 /*logo*/
+
 .sticky img.down {
     display: none;
 }
@@ -1569,7 +1571,7 @@ right:30px;
     background: url(assets/images/cn-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    : center center;
     height: 900px;
 }
 .banner2 .banner_text_content h1 {
