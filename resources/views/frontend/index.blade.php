@@ -216,6 +216,12 @@
                         <div class="section_content_text pt-4">
                             <p> {!! Str::words($about->about_description ?? '', 150, '..') !!}</p>
                         </div>
+
+                    </div>
+                    <div class="singel_about_left_inner pl-4">
+                        <div class="button two">
+                            <a href="{{ route('about') }}">More Details</a>
+                        </div>
                     </div>
                 </div>
 
@@ -230,8 +236,8 @@
     <!----- Start Techno Flipbox Area ----->
     <!--==================================================-->
     @if (count($services) > 0)
-        <div class="flipbox_area parallax pt-85 pb-70"
-            style="background-image:url('../assets/frontend/images/slider/bg2.jpg'); background-size:cover;">
+        <div class="flipbox_area pt-85 pb-70"
+            style="background-image:url('../assets/frontend/images/slider/bg2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -395,13 +401,13 @@
                                         style="padding: 10px;">
                                         <div class="single_case_study_inner">
                                             <div class="single_case_study_thumb">
-                                                <a href="case-study-details.html"><img src="{{ $course->image }}"
+                                                <a href="{{ route('courseDetail',$course) }}"><img src="{{ $course->image }}"
                                                         alt="" /></a>
                                             </div>
                                         </div>
                                         <div class="single_case_study_content">
                                             <div class="single_case_study_content_inner">
-                                                <h2><a href="case-study-details.html"></a>{{ $course->title }}</h2>
+                                                <h2><a href="{{ route('courseDetail',$course) }}"></a>{{ $course->title }}</h2>
                                                 <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span>
                                             </div>
                                         </div>
