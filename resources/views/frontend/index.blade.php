@@ -1,182 +1,9 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
 
-<head>
+@extends('frontend.layouts.master')
 
-    <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Passion Education and Visa Consultancy</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="70x70" href="{{ asset('assets/frontend/img/logo.png') }}">
-    <!-- bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}" type="text/css" media="all" />
-    <!-- carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.carousel.min.css') }}" type="text/css"
-        media="all" />
-    <!-- nivo-slider CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/nivo-slider.css') }}" type="text/css" media="all" />
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}" type="text/css" media="all" />
-    <!-- animated-text CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/animated-text.css') }}" type="text/css" media="all" />
-    <!-- font-awesome CSS -->
-    <link type="text/css" rel="stylesheet"
-        href="{{ asset('assets/frontend/fonts/font-awesome/css/font-awesome.min.css') }}">
-    <!-- font-flaticon CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/flaticon.css') }}" type="text/css" media="all" />
-    <!-- theme-default CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/theme-default.css') }}" type="text/css" media="all" />
-    <!-- meanmenu CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/meanmenu.min.css') }}" type="text/css" media="all" />
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/style.css') }}" type="text/css" media="all" />
-    <!-- transitions CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/owl.transitions.css') }}" type="text/css"
-        media="all" />
-    <!-- venobox CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/venobox/venobox.css') }}" type="text/css" media="all" />
-    <!-- widget CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/widget.css') }}" type="text/css" media="all" />
-    <!-- responsive CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}" type="text/css" media="all" />
-    <!-- modernizr js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/modernizr-3.5.0.min.js') }}"></script>
-    <style>
-        .parallax {
-            position: relative;
-            overflow: hidden;
-        }
+@section('container')
 
-        .parallax::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center center;
-            z-index: -1;
-        }
-
-        .single_about_thumb_inner:hover img {
-            transform: scale(1.1);
-            /* Increase the scale factor as needed */
-            transition: transform 0.3s ease;
-            /* Add a smooth transition effect */
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Loder Start-->
-    {{-- <div class="loader-wrapper">
-	  <div class="loader"></div>
-	  <div class="loder-section left-section"></div>
-	  <div class="loder-section right-section"></div>
-	</div> --}}
-    <!-- Loder End -->
-
-    <!--==================================================-->
-    <!----- Start	Techno Header Top Menu Area Css ----->
-    <!--==================================================-->
-    <div class="header_top_menu pt-2 pb-2 bg_color">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-sm-8">
-                    <div class="header_top_menu_address">
-                        <div class="header_top_menu_address_inner">
-                            <ul>
-                                <li><a href="#"><i
-                                            class="fa fa-envelope-o"></i>{{ officeSetting()->institute_email ?? '' }}</a>
-                                </li>
-                                {{-- <li><a href="#"><i class="fa fa-map-marker"></i>{{ officeSetting()->institute_address ??'' }}</a></li> --}}
-                                <li><a href="#"><i
-                                            class="fa fa-phone"></i>{{ officeSetting()->institute_phone ?? '' }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4">
-                    <div class="header_top_menu_icon">
-                        <div class="header_top_menu_icon_inner">
-                            <ul>
-                                <li><a href="{{ officeSetting()->facebook_url ?? '' }}"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li><a href="{{ officeSetting()->twitter_url ?? '' }}"><i
-                                            class="fa fa-twitter"></i></a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!--==================================================-->
-    <!----- End	Techno Header Top Menu Area Css ----->
-    <!--===================================================-->
-
-    <!--==================================================-->
-    <!----- Start Techno Main Menu Area ----->
-    <!--==================================================-->
-    <div id="sticky-header" class="techno_nav_manu d-md-none d-lg-block d-sm-none d-none">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="menu">
-                    <a href="index.html" class="logo"><img class="down"
-                            src="{{ officeSetting()->institute_logo ?? '' }}" alt=""> <img class="main_sticky"
-                            src="{{ officeSetting()->institute_logo ?? '' }}" alt=""></a>
-                    <ul class="clearfix">
-                        <li><a href="#">Home</a>
-                        </li>
-                        <li><a href="#">About</a>
-                        </li>
-                        <li><a href="#">Courses</a>
-                        </li>
-                        <li><a href="#">Gallery</a>
-                        </li>
-                        <li><a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Techno Mobile Menu Area -->
-    <div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
-        <div class="mobile-menu">
-            <nav class="techno_menu">
-                <ul class="clearfix">
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">About</a>
-                    </li>
-                    <li><a href="#">Courses</a>
-                    </li>
-                    <li><a href="#">Gallery</a>
-                    </li>
-                    <li><a href="#">Contact</a>
-                    </li>
-
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <!--==================================================-->
-    <!----- End Techno Main Menu Area ----->
-    <!--==================================================-->
-
-    <!--==================================================-->
+ <!--==================================================-->
     <!----- Start Techno Slider Area ----->
     <!--==================================================-->
     <div class="slider_list owl-carousel">
@@ -464,6 +291,7 @@
             </div>
         </div>
     @endif
+
     <!--==================================================-->
     <!----- End Techno Flipbox Area ----->
     <!--==================================================-->
@@ -678,7 +506,7 @@
                 <div class="col-lg-9">
                     <div class="section_title white text_left mb-60 mt-3 wow fadeInLeft" data-wow-delay="0.4s">
                         <div class="phone_number mb-3">
-                            <h5>+880 013 143 206</h5>
+                            <h5>{{ officeSetting()->institute_phone ?? '' }}</h5>
                         </div>
                         <div class="section_main_title">
                             <h1>To make requests for the</h1>
@@ -717,7 +545,7 @@
                             <h1><span class="counter">15</span><span>K</span> </h1>
                         </div>
                         <div class="counter_desc">
-                            <h5>Happy Clients</h5>
+                            <h5>Happy Students</h5>
                         </div>
                     </div>
                 </div>
@@ -727,7 +555,7 @@
                             <h1><span class="counter">1280</span><span>+</span> </h1>
                         </div>
                         <div class="counter_desc">
-                            <h5>Account Number</h5>
+                            <h5>Best Teacher</h5>
                         </div>
                     </div>
                 </div>
@@ -737,7 +565,7 @@
                             <h1><span class="counter">10</span><span>K</span> </h1>
                         </div>
                         <div class="counter_desc">
-                            <h5>Finished Projects</h5>
+                            <h5>Advanced Course</h5>
                         </div>
                     </div>
                 </div>
@@ -747,7 +575,7 @@
                             <h1><span class="counter">992</span><span>+</span> </h1>
                         </div>
                         <div class="counter_desc">
-                            <h5>Win Awards</h5>
+                            <h5>Best Service</h5>
                         </div>
                     </div>
                 </div>
@@ -773,7 +601,7 @@
                             </div>
                             <div class="section_main_title">
                                 <h1>What Says</h1>
-                                <h1>Our Happy Clients</h1>
+                                <h1>Our Happy Students</h1>
                             </div>
                             <div class="em_bar">
                                 <div class="em_bar_bg"></div>
@@ -822,14 +650,14 @@
     <!--==================================================-->
     <!----- Start Techno Contact Area ----->
     <!--==================================================-->
-    <div class="contact_area pt-85 pb-90 parallax"
-        style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size:cover;">
+
+    <div class="contact_area pt-85 pb-90"
+    style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section_title white text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.4s">
                         <div class="section_sub_title uppercase mb-3">
-                            <h6>GET QUOTE</h6>
                         </div>
                         <div class="section_main_title">
                             <h1>Make An</h1>
@@ -1055,162 +883,4 @@
     <!----- End Techno Blog Area ----->
     <!--==================================================-->
 
-
-    <!--==================================================-->
-    <!----- Start Techno Footer Middle Area ----->
-    <!--==================================================-->
-
-    <div class="footer-middle pt-95 parallax" style="background-image:url('../assets/frontend/images/call-bg.png')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="widget widgets-company-info">
-                        <div class="footer-bottom-logo pb-40">
-                            <img src="  {{ officeSetting()->institute_logo ?? '' }}"
-                                style="height: 90px; width:100px;" alt="" />
-                        </div>
-                        <div class="company-info-desc">
-                            <p>
-                                {{ Str::limit(strip_tags(officeSetting()->description ?? ''), $limit = 100, '') }}
-                            </p>
-                        </div>
-                        <div class="follow-company-info pt-3">
-                            <div class="follow-company-text mr-3">
-                                <a href="#">
-                                    <p>Follow Us</p>
-                                </a>
-                            </div>
-                            <div class="follow-company-icon">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-skype"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="widget widget-nav-menu">
-                        <h4 class="widget-title pb-4">Our Services</h4>
-                        <div class="menu-quick-link-container ml-4">
-                            <ul id="menu-quick-link" class="menu">
-                                @foreach (services() as $service)
-                                    <li><a href="#">{{ $service->title }}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="widget widgets-company-info">
-                        <h3 class="widget-title pb-4">Institute Address</h3>
-                        <div class="footer-social-info">
-                            <p><span>Address :</span> {{ officeSetting()->institute_address ?? '' }}</p>
-                        </div>
-                        <div class="footer-social-info">
-                            <p><span>Phone :</span> {{ officeSetting()->institute_phone ?? '' }}</p>
-                        </div>
-                        <div class="footer-social-info">
-                            <p><span>Email :</span> {{ officeSetting()->institute_email ?? '' }}</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div id="em-recent-post-widget">
-                        <div class="single-widget-item">
-                            <h4 class="widget-title pb-3">Popular Post</h4>
-                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpassionnpj&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                             width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                              allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row footer-bottom mt-70 pt-3 pb-1">
-                <div class="col-lg-6 col-md-6">
-                    <div class="footer-bottom-content">
-                        <div class="footer-bottom-content-copy">
-                            <p>© {{ now()->year }} Passion.All Rights Reserved. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="footer-bottom-right">
-                        <div class="footer-bottom-right-text">
-                            <a class="absod" href="#">Privacy Policy </a>
-                            <a href="#"> Terms & Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--==================================================-->
-    <!----- End Techno Footer Middle Area ----->
-    <!--==================================================-->
-
-    <!-- jquery js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/jquery-3.2.1.min.js') }}"></script>
-    <!-- bootstrap js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
-    <!-- carousel js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/owl.carousel.min.js') }}"></script>
-    <!-- counterup js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/jquery.counterup.min.js') }}"></script>
-    <!-- waypoints js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/waypoints.min.js') }}"></script>
-    <!-- wow js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/wow.js') }}"></script>
-    <!-- imagesloaded js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/imagesloaded.pkgd.min.js') }}"></script>
-    <!-- venobox js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/venobox/venobox.js') }}"></script>
-    <!-- ajax mail js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/ajax-mail.js') }}"></script>
-    <!--  testimonial js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/testimonial.js') }}"></script>
-    <!--  animated-text js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/animated-text.js') }}"></script>
-    <!-- venobox min js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/venobox/venobox.min.js') }}"></script>
-    <!-- isotope js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/isotope.pkgd.min.js') }}"></script>
-    <!-- jquery nivo slider pack js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/jquery.nivo.slider.pack.js') }}"></script>
-    <!-- jquery meanmenu js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/jquery.meanmenu.js') }}"></script>
-    <!-- jquery scrollup js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/jquery.scrollUp.js') }}"></script>
-    <!-- theme js -->
-    <script type="text/javascript" src="{{ asset('assets/frontend/js/theme.js') }}"></script>
-    <!-- jquery js -->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var flipboxAreas = document.querySelectorAll('.parallax');
-
-            function updateParallax() {
-                flipboxAreas.forEach(function(area) {
-                    var boundingRect = area.getBoundingClientRect();
-                    var offset = window.pageYOffset - boundingRect.top;
-                    var speed = 0.5; // Adjust the parallax speed
-
-                    area.style.backgroundPositionY = offset * speed + "px";
-                });
-            }
-
-            // Initial call to set the background position on page load
-            updateParallax();
-
-            // Update the parallax effect on scroll
-            window.addEventListener("scroll", updateParallax);
-        });
-    </script>
-
-</body>
-
-<!-- Mirrored from html.ditsolution.net/techno/index-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jan 2024 15:40:52 GMT -->
-
-</html>
+@endsection

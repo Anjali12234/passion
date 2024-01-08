@@ -19,6 +19,11 @@ class FrontendController extends Controller
         $staffs = Staff::take(4)->where('status', 1)->get();
         $testimonials = Testimonial::all();
         $courses=Course::all();
-        return view('welcome', compact('sliders', 'about', 'services', 'staffs','testimonials','courses'));
+        return view('frontend.index', compact('sliders', 'about', 'services', 'staffs','testimonials','courses'));
+    }
+
+    public function about()
+    {
+        return view('frontend.about');
     }
 }
