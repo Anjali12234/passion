@@ -18,4 +18,5 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('welcome', 'welcome')->name('welcome');
+    Route::get('about', 'about')->name('about');
 });
