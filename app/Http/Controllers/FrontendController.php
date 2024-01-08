@@ -18,13 +18,24 @@ class FrontendController extends Controller
         $services = Service::take(6)->where('status', 1)->get();
         $staffs = Staff::take(4)->where('status', 1)->get();
         $testimonials = Testimonial::all();
-        $courses=Course::all();
-        return view('frontend.index', compact('sliders', 'about', 'services', 'staffs','testimonials','courses'));
+        $courses = Course::all();
+        return view('frontend.index', compact('sliders', 'about', 'services', 'staffs', 'testimonials', 'courses'));
     }
 
     public function about()
     {
         $about = About::first();
-        return view('frontend.about',compact('about'));
+        return view('frontend.about', compact('about'));
+    }
+
+    public function course()
+    {
+        $courses = Course::all();
+        return view('frontend.course.course', compact('courses'));
+    }
+
+    public function courseDetail(Course $course)
+    {
+        return view('frontend.course.courseDetail', compact('course'));
     }
 }

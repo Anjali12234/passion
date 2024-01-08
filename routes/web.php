@@ -19,4 +19,6 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('welcome', 'welcome')->name('welcome');
     Route::get('about', 'about')->name('about');
+    Route::get('course', 'course')->name('course');
+    Route::get('course/{courseSlug}', 'courseDetail')->name('courseDetail');
 });
