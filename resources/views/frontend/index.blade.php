@@ -216,6 +216,12 @@
                         <div class="section_content_text pt-4">
                             <p> {!! Str::words($about->about_description ?? '', 150, '..') !!}</p>
                         </div>
+
+                    </div>
+                    <div class="singel_about_left_inner pl-4">
+                        <div class="button two">
+                            <a href="{{ route('about') }}">More Details</a>
+                        </div>
                     </div>
                 </div>
 
@@ -230,8 +236,8 @@
     <!----- Start Techno Flipbox Area ----->
     <!--==================================================-->
     @if (count($services) > 0)
-        <div class="flipbox_area parallax pt-85 pb-70"
-            style="background-image:url('../assets/frontend/images/slider/bg2.jpg'); background-size:cover;">
+        <div class="flipbox_area pt-85 pb-70"
+            style="background-image:url('../assets/frontend/images/slider/bg2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

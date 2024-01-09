@@ -13,7 +13,7 @@
                         </li>
                         <li><a href="{{ route('about') }}">About</a>
                         </li>
-                        <li><a href="#">Courses</a>
+                        <li><a href="{{ route('course') }}">Courses</a>
                         </li>
                         <li><a href="#">Gallery</a>
                         </li>
@@ -34,7 +34,7 @@
                     </li>
                     <li><a href="{{ route('about') }}">About</a>
                     </li>
-                    <li><a href="#">Courses</a>
+                    <li><a href="{{ route('course') }}">Courses</a>
                     </li>
                     <li><a href="#">Gallery</a>
                     </li>

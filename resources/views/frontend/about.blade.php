@@ -67,11 +67,66 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
                         <div class="em_bar_bg"></div>
                     </div>
                     <div class="section_content_text pt-4">
-                        <p> {!! Str::words($about->about_description ?? '', 150, '..') !!}</p>
+                        <p> {!! ($about->about_description ??'') !!}</p>
                     </div>
                 </div>
             </div>
 
+
+        </div>
+
+    </div>
+
+</div>
+<div class="accordion-area about-pages pt-100 pb-100">
+    <div class="container-fluid">
+        <div class="row">
+             <div class="col-lg-6 main-accordion-lt">
+                <!-- Start Accordion -->
+                <div class="acd-items acd-arrow pt-30 pb-30 mr-4 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="section_title white text_left mb-60 mt-3">
+                        <div class="section_sub_title uppercase mb-3">
+                            <h6>WHY CHOOSE US</h6>
+                        </div>
+                        <div class="section_main_title">
+                            <h1>We Provide World Class</h1>
+                            <h1>Facility to everyone</h1>
+                        </div>
+                        <div class="em_bar">
+                            <div class="em_bar_bg"></div>
+                        </div>
+
+                    </div>
+                    <div class="panel-group symb" id="accordion">
+                        <div class="panel panel-default">
+
+                            <div id="ac1" class="panel-collapse in">
+                                <div class="panel-body pl-4 pr-4">
+                                    <p>
+                                    {{ $about->message }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End Accordion -->
+            </div>
+            <div class="col-lg-6 absod">
+                <div class="single-panel">
+                    <div class="single-panel-thumb">
+                        <div class="single-panel-thumb-inner">
+                            <img src="{{ $about->director_image }}" style="height: 741px; width: 800px;" alt="" />
+                        </div>
+                        <div class="main_video text_center">
+                            <div class="video-icon">
+                                <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
