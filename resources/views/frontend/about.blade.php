@@ -103,7 +103,7 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
                             <div id="ac1" class="panel-collapse in">
                                 <div class="panel-body pl-4 pr-4">
                                     <p>
-                                    {{ $about->message }}
+                                    {{ $about->message ??'' }}
                                     </p>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
                 <div class="single-panel">
                     <div class="single-panel-thumb">
                         <div class="single-panel-thumb-inner">
-                            <img src="{{ $about->director_image }}" style="height: 741px; width: 800px;" alt="" />
+                            <img src="{{ $about->director_image ??'' }}" style="height: 741px; width: 800px;" alt="" />
                         </div>
                         <div class="main_video text_center">
                             <div class="video-icon">
