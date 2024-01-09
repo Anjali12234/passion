@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\StaffController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +30,5 @@ Route::put('staff/{staff}/updatestaffStatus', [StaffController::class, 'updateSt
 Route::resource('popUp', PopUpController::class);
 Route::put('popUp/{popUp}/updatePopUpStatus', [PopUpController::class, 'updateStatus'])->name('popUp.updatePopUpStatus');
 
-
-
+Route::resource('student',StudentController::class);
+Route::put('student/{student}/updateStudentStatus',[StudentController::class,'updateStatus'])->name('student.updateStudentStatus');

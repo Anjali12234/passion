@@ -567,7 +567,7 @@
                                             <div class="single_case_study_thumb">
                                                 <a href="case-study-details.html"><img src="{{ $course->image }}"
                                                         alt="" style="height: 270px; width:370;" /></a>
-                                            </div>
+                                            </div>  
                                         </div>
                                         <div class="single_case_study_content">
                                             <div class="single_case_study_content_inner">

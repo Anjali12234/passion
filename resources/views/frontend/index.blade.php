@@ -400,15 +400,29 @@
                                     <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s"
                                         style="padding: 10px;">
                                         <div class="single_case_study_inner">
+
                                             <div class="single_case_study_thumb">
-                                                <a href="{{ route('courseDetail',$course) }}"><img src="{{ $course->image }}"
-                                                        alt="" /></a>
+                                                <a href="case-study-details.html"><img src="{{ $course->image }}"
+                                                        alt="" style="height: 270px; width:370;" /></a>
                                             </div>
                                         </div>
                                         <div class="single_case_study_content">
                                             <div class="single_case_study_content_inner">
-                                                <h2><a href="{{ route('courseDetail',$course) }}"></a>{{ $course->title }}</h2>
-                                                <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span>
+                                                <div class="row">
+                                                    <div class="col-md-4 text-center mt-2"
+                                                        style="border-right: 1.5px solid #0b24e3;padding-right: 15px;">
+                                                        {{ $course->time }}
+                                                    </div>
+                                                    <div class="col-md-4 text-center"
+                                                        style="border-right: 1.5px solid #0b24e3;padding-right: 15px;">
+                                                        {{ $course->title }}
+                                                    </div>
+                                                    <div class="col-md-4 text-center">
+                                                        {{ $course->price }}
+                                                    </div>
+                                                </div>
+                                                {{-- <h2><a href="case-study-details.html"></a>{{ $course->title }}</h2>
+                                                <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span> --}}
                                             </div>
                                         </div>
                                     </div>
