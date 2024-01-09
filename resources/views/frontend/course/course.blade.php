@@ -44,15 +44,15 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="single_blog mb-30 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="single_blog_thumb pb-4">
-                        <a href="#"><img src="{{ $course->image }}" style="height: 400px; width: 500px;" alt="" /></a>
+                        <a href="{{route('courseDetail',$course->slug)}}"><img src="{{ $course->image }}" style="height: 400px; width: 500px;" alt="" /></a>
                     </div>
                     <div class="single_blog_content pl-4 pr-4">
                         <div class="techno_blog_meta">
-                            <a href="#">{{ $course->title }} </a>
+                            <a href="{{route('courseDetail',$course->slug)}}">{{ $course->title }} </a>
                             <span class="meta-date pl-3">{{ $course->price }}</span>
                         </div>
                         <div class="blog_page_title pb-35">
-                            <h3><a href="#">{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</a></h3>
+                            <h3><a href="{{route('courseDetail',$course->slug)}}">{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</a></h3>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,8 @@
                         </li>
                         <li><a href="{{ route('course') }}">Courses</a>
                         </li>
+                        <li><a href="{{ route('service') }}">Services</a>
+                        </li>
                         <li><a href="#">Gallery</a>
                         </li>
                         <li><a href="#">Contact</a>

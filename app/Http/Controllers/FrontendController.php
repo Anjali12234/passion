@@ -38,4 +38,13 @@ class FrontendController extends Controller
     {
         return view('frontend.course.courseDetail', compact('course'));
     }
+    public function service()
+    {
+        $services = Service::latest()->get();
+        return view('frontend.service.service',compact('services'));
+    }
+    public function serviceDetail(Service $service)
+    {
+        return view('frontend.service.serviceDetail',compact('service'));
+    }
 }
