@@ -17,8 +17,9 @@
                         </li>
                         <li><a href="{{ route('service') }}">Services</a>
                         </li>
-                        <li><a href="#">Gallery</a>
+                        <li><a href="{{ route('gallery')}}">Gallery</a>
                         </li>
+                        <li><a href="{{ route('team') }}">Team</a>
                         <li><a href="#">Contact</a>
                         </li>
                     </ul>

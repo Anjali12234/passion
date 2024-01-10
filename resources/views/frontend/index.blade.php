@@ -269,7 +269,7 @@
                                             <h3>{{ $service->title }}</h3>
                                         </div>
                                         <div class="flipbox_desc">
-                                            <p>{!! Str::words($service->description ?? '', 150, '..') !!}</p>
+                                            <p>{!! Illuminate\Support\Str::limit($service->description ?? '', 100, '') !!}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -282,11 +282,11 @@
                                             </h3>
                                         </div>
                                         <div class="flipbox_desc">
-                                            <p>{!! Str::words($service->description ?? '', 150, '..') !!}</p>
+                                            <p>{!! Illuminate\Support\Str::limit($service->description ?? '', 100, '') !!}</p>
 
                                         </div>
                                         <div class="flipbox_button">
-                                            <a href="#">Read More<i class="fa fa-angle-double-right"></i></a>
+                                            <a href="{{route('service')}}">Read More<i class="fa fa-angle-double-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -403,7 +403,7 @@
 
                                             <div class="single_case_study_thumb">
                                                 <a href="case-study-details.html"><img src="{{ $course->image }}"
-                                                        alt="" style="height: 270px; width:370;" /></a>
+                                                        alt="" style="height: 450px; width:350px;" /></a>
                                             </div>
                                         </div>
                                         <div class="single_case_study_content">

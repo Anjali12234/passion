@@ -74,7 +74,8 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="footer-bottom-content">
                         <div class="footer-bottom-content-copy">
-                            <p>© {{ now()->year }} Passion.All Rights Reserved. </p>
+                            <p>© {{ now()->year }} Passion. All Rights Reserved. Developed By <a href="https://anjali12234.github.io/portfolio/" target="_blank">Anjali Sharma &#128156;</a></p>
+
                         </div>
                     </div>
                 </div>

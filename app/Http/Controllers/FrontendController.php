@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Course;
+use App\Models\Gallery;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Staff;
@@ -15,8 +16,8 @@ class FrontendController extends Controller
     {
         $sliders = Slider::all();
         $about = About::first();
-        $services = Service::take(6)->where('status', 1)->get();
-        $staffs = Staff::take(4)->where('status', 1)->get();
+        $services = Service::inRandomOrder()->take(6)->where('status', 1)->get();
+        $staffs = Staff::inRandomOrder()->take(4)->where('status', 1)->get();
         $testimonials = Testimonial::all();
         $courses = Course::all();
         return view('frontend.index', compact('sliders', 'about', 'services', 'staffs', 'testimonials', 'courses'));
@@ -47,4 +48,15 @@ class FrontendController extends Controller
     {
         return view('frontend.service.serviceDetail',compact('service'));
     }
+    public function team(Staff $staff)
+    {
+        $staffs= Staff::latest()->get();
+        return view('frontend.team.team', compact('staffs'));
+    }
+    public function gallery(Gallery $gallery)
+    {
+        $galleries = Gallery::latest()->get();
+        return view('frontend.Gallery.gallery', compact('galleries'));
+    }
+    
 }

@@ -23,4 +23,6 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('course/{course:Slug}','courseDetail')->name('courseDetail');
     Route::get('service', 'service')->name('service');
     Route::get('serviceDetail/{service:slug}','serviceDetail')->name('serviceDetail');
+    Route::get('team','team')->name('team');
+    Route::get('gallery','gallery')->name('gallery');
 });
