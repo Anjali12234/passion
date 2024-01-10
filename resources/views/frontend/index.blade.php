@@ -1,9 +1,8 @@
-
 @extends('frontend.layouts.master')
 
 @section('container')
 
- <!--==================================================-->
+    <!--==================================================-->
     <!----- Start Techno Slider Area ----->
     <!--==================================================-->
     <div class="slider_list owl-carousel">
@@ -23,8 +22,7 @@
                                         </div>
                                         <div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
                                             <div class="button">
-                                                <a href="#">Contact Us <i
-                                                        class="fa fa-long-arrow-right"></i></a>
+                                                <a href="#">Contact Us <i class="fa fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
@@ -177,15 +175,14 @@
                         <div class="single_about_thumb_inner" style="position: relative;">
 
                             <!-- Image -->
-                            <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;"
-                                alt="" />
+                            <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;" alt="" />
 
                             <!-- Video Icon and Link -->
                             <div class="slider-video wow fadeInUp" data-wow-delay="0.3s"
                                 style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
                                 <div class="video-icon">
-                                    <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube"
-                                        data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg">
+                                    <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
+                                        href="https://youtu.be/BS4TUd7FJSg">
                                         <i class="fa fa-play"></i>
                                     </a>
                                 </div>
@@ -286,7 +283,8 @@
 
                                         </div>
                                         <div class="flipbox_button">
-                                            <a href="{{route('service')}}">Read More<i class="fa fa-angle-double-right"></i></a>
+                                            <a href="{{ route('service') }}">Read More<i
+                                                    class="fa fa-angle-double-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +328,7 @@
                     <div class="col-lg-3">
                         <div class="section_button mt-50 wow fadeInRight" data-wow-delay="0.4s">
                             <div class="button two">
-                                <a href="#">Join Our Team</a>
+                                <a href="{{ route('team') }}">View Our Team</a>
                             </div>
                         </div>
                     </div>
@@ -375,12 +373,14 @@
                     <div class="section_title text_center mb-50 mt-3 wow fadeInDown" data-wow-delay="0.4s">
 
                         <div class="section_sub_title uppercase mb-3">
-                            <h6>FEATURES CASE</h6>
+                            <h6>GALLERY CASE</h6>
                         </div>
                         <div class="section_main_title">
-                            <h1>Our Latest Case Study</h1>
-                            <h1>For Your Business</h1>
+                            <h1>Some Glimpse
+                                <div> Of Passion</div>
+                            </h1>
                         </div>
+
                         <div class="em_bar">
                             <div class="em_bar_bg"></div>
                         </div>
@@ -395,34 +395,21 @@
 
                         <div class="case_study_list owl-carousel curosel-style">
                             <!--Start Single Portfolio -->
-                            @foreach ($courses as $course)
+                            @foreach ($galleries as $gallery)
                                 <div class="col-lg-12 pdn_0">
                                     <div class="single_case_study wow fadeInUp" data-wow-delay="0.4s"
                                         style="padding: 10px;">
                                         <div class="single_case_study_inner">
 
                                             <div class="single_case_study_thumb">
-                                                <a href="case-study-details.html"><img src="{{ $course->image }}"
+                                                <a href="case-study-details.html"><img src="{{ $gallery->image }}"
                                                         alt="" style="height: 450px; width:350px;" /></a>
                                             </div>
                                         </div>
                                         <div class="single_case_study_content">
                                             <div class="single_case_study_content_inner">
-                                                <div class="row">
-                                                    <div class="col-md-4 text-center mt-2"
-                                                        style="border-right: 1.5px solid #0b24e3;padding-right: 15px;">
-                                                        {{ $course->time }}
-                                                    </div>
-                                                    <div class="col-md-4 text-center"
-                                                        style="border-right: 1.5px solid #0b24e3;padding-right: 15px;">
-                                                        {{ $course->title }}
-                                                    </div>
-                                                    <div class="col-md-4 text-center">
-                                                        {{ $course->price }}
-                                                    </div>
-                                                </div>
-                                                {{-- <h2><a href="case-study-details.html"></a>{{ $course->title }}</h2>
-                                                <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span> --}}
+                                                <h2><a href="case-study-details.html"></a>{{ $gallery->title }}</h2>
+                                                {{-- <span>{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</span> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -519,388 +506,307 @@
     <!--==================================================-->
     <!----- Start Techno Call Do Action Area ----->
     <!--==================================================-->
-    <div class="call_do_action pt-85 pb-130 bg_color parallax"
-        style="background-image:url('../assets/frontend/images/call-bg.png'); backgound-size:cover;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="section_title white text_left mb-60 mt-3 wow fadeInLeft" data-wow-delay="0.4s">
-                        <div class="phone_number mb-3">
-                            <h5>{{ officeSetting()->institute_phone ?? '' }}</h5>
-                        </div>
-                        <div class="section_main_title">
-                            <h1>To make requests for the</h1>
-                            <h1>further information</h1>
-                        </div>
-                        <div class="button three mt-40">
-                            <a href="#">Join With Now<i class="fa fa-long-arrow-right"></i></a>
-                        </div>
+    
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.900776399405!2d81.61486877520613!3d28.05805410993661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998673ceeddca47%3A0xe233f036b64b3dd4!2sPassion%20Education%20And%20Visa%20Service!5e0!3m2!1sen!2snp!4v1704877821236!5m2!1sen!2snp"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    
+    
+        <!--==================================================-->
+        <!----- End Techno Call Do Action Area ----->
+        <!--==================================================-->
 
+        <!--==================================================-->
+        <!----- Start Techno Counter Area ----->
+        <!--==================================================-->
+        <div class="counter_area">
+            <div class="container">
+                <div class="row cntr_bg_up nagative_margin pt-50 pb-45 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="single_counter text_center mb-4">
+                            <div class="countr_text">
+                                <h1><span class="counter">15</span><span>K</span> </h1>
+                            </div>
+                            <div class="counter_desc">
+                                <h5>Happy Students</h5>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="single_counter text_center mb-4">
+                            <div class="countr_text">
+                                <h1><span class="counter">1280</span><span>+</span> </h1>
+                            </div>
+                            <div class="counter_desc">
+                                <h5>Best Teacher</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="single_counter text_center mb-4">
+                            <div class="countr_text">
+                                <h1><span class="counter">10</span><span>K</span> </h1>
+                            </div>
+                            <div class="counter_desc">
+                                <h5>Advanced Course</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="single_counter text_center mb-4">
+                            <div class="countr_text">
+                                <h1><span class="counter">992</span><span>+</span> </h1>
+                            </div>
+                            <div class="counter_desc">
+                                <h5>Best Service</h5>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-lg-3">
-                    <div class="single-video mt-90 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="video-icon">
-                            <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-                                href="https://youtu.be/BS4TUd7FJSg"><i class="fa fa-play"></i></a>
+            </div>
+        </div>
+        <!--==================================================-->
+        <!----- End Techno Counter Area ----->
+        <!--==================================================-->
+
+        <!--==================================================-->
+        <!----- Start Techno Testimonial Area ----->
+        <!--==================================================-->
+        @if (count($testimonials) > 0)
+            <div class="testimonial_area pt-80 pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section_title text_center mb-60 mt-3 wow fadeInRight" data-wow-delay="0.4s">
+                                <div class="section_sub_title uppercase mb-3">
+                                    <h6>TESTIMONIAL</h6>
+                                </div>
+                                <div class="section_main_title">
+                                    <h1>What Says</h1>
+                                    <h1>Our Happy Students</h1>
+                                </div>
+                                <div class="em_bar">
+                                    <div class="em_bar_bg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="testimonial_list owl-carousel curosel-style">
+                                    @foreach ($testimonials as $testimonial)
+                                        <div class="col-lg-12">
+                                            <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
+                                                <div class="single_testimonial_content">
+                                                    <div class="single_testimonial_content_text mb-4">
+                                                        <p>{{ $testimonial->description ?? '' }}</p>
+                                                    </div>
+                                                    <div class="single_testimonial_thumb mt-2 mr-3"
+                                                        style="border-radius: 50%;">
+                                                        <img src="{{ $testimonial->image }}" alt=""
+                                                            style="border-radius: 50%; height:100px; width:100px;" />
+                                                    </div>
+
+                                                    <div class="single_testimonial_content_title mt-4">
+                                                        <h4>{{ $testimonial->name }}</h4>
+                                                        <span>{{ $testimonial->post }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--==================================================-->
-    <!----- End Techno Call Do Action Area ----->
-    <!--==================================================-->
+        @endif
+        <!--==================================================-->
+        <!----- End Techno Testimonial Area ----->
+        <!--==================================================-->
 
-    <!--==================================================-->
-    <!----- Start Techno Counter Area ----->
-    <!--==================================================-->
-    <div class="counter_area">
-        <div class="container">
-            <div class="row cntr_bg_up nagative_margin pt-50 pb-45 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_counter text_center mb-4">
-                        <div class="countr_text">
-                            <h1><span class="counter">15</span><span>K</span> </h1>
-                        </div>
-                        <div class="counter_desc">
-                            <h5>Happy Students</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_counter text_center mb-4">
-                        <div class="countr_text">
-                            <h1><span class="counter">1280</span><span>+</span> </h1>
-                        </div>
-                        <div class="counter_desc">
-                            <h5>Best Teacher</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_counter text_center mb-4">
-                        <div class="countr_text">
-                            <h1><span class="counter">10</span><span>K</span> </h1>
-                        </div>
-                        <div class="counter_desc">
-                            <h5>Advanced Course</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="single_counter text_center mb-4">
-                        <div class="countr_text">
-                            <h1><span class="counter">992</span><span>+</span> </h1>
-                        </div>
-                        <div class="counter_desc">
-                            <h5>Best Service</h5>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </div>
-    <!--==================================================-->
-    <!----- End Techno Counter Area ----->
-    <!--==================================================-->
+        <!--==================================================-->
+        <!----- Start Techno Contact Area ----->
+        <!--==================================================-->
 
-    <!--==================================================-->
-    <!----- Start Techno Testimonial Area ----->
-    <!--==================================================-->
-    @if (count($testimonials) > 0)
-        <div class="testimonial_area pt-80 pb-70">
+        <div class="contact_area pt-85 pb-90"
+            style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section_title text_center mb-60 mt-3 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="section_title white text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.4s">
                             <div class="section_sub_title uppercase mb-3">
-                                <h6>TESTIMONIAL</h6>
                             </div>
                             <div class="section_main_title">
-                                <h1>What Says</h1>
-                                <h1>Our Happy Students</h1>
+                                <h1>Make An</h1>
+                                <h1>Contact With Us</h1>
                             </div>
                             <div class="em_bar">
                                 <div class="em_bar_bg"></div>
                             </div>
+                            <div>
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="testimonial_list owl-carousel curosel-style">
-                                @foreach ($testimonials as $testimonial)
-                                    <div class="col-lg-12">
-                                        <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
-                                            <div class="single_testimonial_content">
-                                                <div class="single_testimonial_content_text mb-4">
-                                                    <p>{{ $testimonial->description ?? '' }}</p>
-                                                </div>
-                                                <div class="single_testimonial_thumb mt-2 mr-3"
-                                                    style="border-radius: 50%;">
-                                                    <img src="{{ $testimonial->image }}" alt=""
-                                                        style="border-radius: 50%; height:100px; width:100px;" />
-                                                </div>
-
-                                                <div class="single_testimonial_content_title mt-4">
-                                                    <h4>{{ $testimonial->name }}</h4>
-                                                    <span>{{ $testimonial->post }}</span>
-                                                </div>
-                                            </div>
+                    <div class="col-xl-12">
+                        <div class="quote_wrapper wow fadeInUp" data-wow-delay="0.4s">
+                            <form id="contact_form" action="{{ route('admin.contact.store') }}" method="POST"
+                                id="dreamit-form">
+                                @csrf
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form_box mb-30">
+                                            <input type="text" name="name" placeholder="Name">
+                                            <span class="text-warning">
+                                                @error('name')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
-                                @endforeach
+                                    <div class="col-lg-6">
+                                        <div class="form_box mb-30">
+                                            <input type="email" name="email" placeholder="Email Address">
+                                            <span class="text-warning">
+                                                @error('email')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form_box mb-30">
+                                            <input type="number" name="phone" placeholder="Phone Number">
+                                            <span class="text-warning">
+                                                @error('phone')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form_box mb-30">
+                                            <input type="text" name="subject" placeholder="Subject">
+                                            <span class="text-warning">
+                                                @error('subject')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
 
-                            </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_box mb-30">
+                                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Write a Message"></textarea>
+                                            <span class="text-warning">
+                                                @error('message')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                        <div class="quote_btn text_center">
+                                            <button class="btn" type="submit">Free Consultancy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="status"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    @endif
-    <!--==================================================-->
-    <!----- End Techno Testimonial Area ----->
-    <!--==================================================-->
+        <!--==================================================-->
+        <!----- End Techno Contact Area ----->
+        <!--==================================================-->
 
-
-    <!--==================================================-->
-    <!----- Start Techno Contact Area ----->
-    <!--==================================================-->
-
-    <div class="contact_area pt-85 pb-90"
-    style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title white text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.4s">
-                        <div class="section_sub_title uppercase mb-3">
-                        </div>
-                        <div class="section_main_title">
-                            <h1>Make An</h1>
-                            <h1>Contact With Us</h1>
-                        </div>
-                        <div class="em_bar">
-                            <div class="em_bar_bg"></div>
-                        </div>
-                        <div>
-                            @if ($message = Session::get('success'))
-                                <div class="alert alert-success">
-                                    <p>{{ $message }}</p>
-                                </div>
-                            @endif
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="quote_wrapper wow fadeInUp" data-wow-delay="0.4s">
-                        <form id="contact_form" action="{{ route('admin.contact.store') }}" method="POST"
-                            id="dreamit-form">
-                            @csrf
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form_box mb-30">
-                                        <input type="text" name="name" placeholder="Name">
-                                        <span class="text-warning">
-                                            @error('name')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form_box mb-30">
-                                        <input type="email" name="email" placeholder="Email Address">
-                                        <span class="text-warning">
-                                            @error('email')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form_box mb-30">
-                                        <input type="number" name="phone" placeholder="Phone Number">
-                                        <span class="text-warning">
-                                            @error('phone')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form_box mb-30">
-                                        <input type="text" name="subject" placeholder="Subject">
-                                        <span class="text-warning">
-                                            @error('subject')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form_box mb-30">
-                                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Write a Message"></textarea>
-                                        <span class="text-warning">
-                                            @error('message')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                    <div class="quote_btn text_center">
-                                        <button class="btn" type="submit">Free Consultancy</button>
-                                    </div>
-                                </div>
+        <!--==================================================-->
+        <!----- Start Techno Blog Area ----->
+        <!--==================================================-->
+        <div class="blog_area pt-85 pb-65">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section_title text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.3s">
+                            <div class="section_sub_title uppercase mb-3">
+                                <h6>LATEST ARTICLE</h6>
                             </div>
-                        </form>
-                        <div id="status"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--==================================================-->
-    <!----- End Techno Contact Area ----->
-    <!--==================================================-->
+                            <div class="section_main_title">
+                                <h1>See Our Latest</h1>
+                                <h1>Blog Posts</h1>
+                            </div>
+                            <div class="em_bar">
+                                <div class="em_bar_bg"></div>
+                            </div>
 
-    <!--==================================================-->
-    <!----- Start Techno Blog Area ----->
-    <!--==================================================-->
-    <div class="blog_area pt-85 pb-65">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text_center mb-60 mt-3 wow fadeInDown" data-wow-delay="0.3s">
-                        <div class="section_sub_title uppercase mb-3">
-                            <h6>LATEST ARTICLE</h6>
-                        </div>
-                        <div class="section_main_title">
-                            <h1>See Our Latest</h1>
-                            <h1>Blog Posts</h1>
-                        </div>
-                        <div class="em_bar">
-                            <div class="em_bar_bg"></div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="single_blog_thumb">
-                            <a href="blog-details.html"><img src="{{ asset('assets/frontend/images/blog1.jpg') }}"
-                                    alt="" /></a>
-                        </div>
-                        <div class="single_blog_date">
-                            <div class="single_blog_date_inner">
-                                <h3>25</h3>
-                                <span>DEC</span>
-                                <span class="years">2023</span>
-                            </div>
-                        </div>
-                        <div class="single_blog_content pt-4 pl-4 pr-4">
-                            <div class="techno_blog_meta">
-                                <a href="#">Techno </a>
-                                <span class="meta-date pl-3">Corporate</span>
-                            </div>
-                            <div class="blog_page_title pb-1">
-                                <h3><a href="blog-details.html">The five devices you need to work anytime</a></h3>
-                            </div>
-                            <div class="blog_description">
-                                <p>Lorem ipsum dolor sit amet consectet adipisie cing elit sed eiusmod tempor incididunt
-                                    on labore et dolore. </p>
-                            </div>
-                            <div class="blog_page_button style_two pb-5">
-                                <a href="blog-details.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="single_blog_thumb">
-                            <a href="blog-details.html"><img src="{{ asset('assets/frontend/images/blog2.jpg') }}"
-                                    alt="" /></a>
-                        </div>
-                        <div class="single_blog_date color3">
-                            <div class="single_blog_date_inner">
-                                <h3>28</h3>
-                                <span>DEC</span>
-                                <span class="years">2023</span>
-                            </div>
-                        </div>
-                        <div class="single_blog_content pt-4 pl-4 pr-4">
-                            <div class="techno_blog_meta">
-                                <a href="#">Techno </a>
-                                <span class="meta-date pl-3">Business</span>
-                            </div>
-                            <div class="blog_page_title pb-1">
-                                <h3><a href="blog-details.html">How to learn PHP 10 tips to get you started</a></h3>
-                            </div>
-                            <div class="blog_description">
-                                <p>Lorem ipsum dolor sit amet consectet adipisie cing elit sed eiusmod tempor incididunt
-                                    on labore et dolore. </p>
-                            </div>
-                            <div class="blog_page_button style_two pb-5">
-                                <a href="blog-details.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="single_blog_thumb">
-                            <a href="blog-details.html"><img src="{{ asset('assets/frontend/images/blog3.jpg') }}"
-                                    alt="" /></a>
-                        </div>
-                        <div class="single_blog_date color2">
+                <div class="row">
+
+                    @foreach ($courses as $course)
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="single_blog_thumb">
+                                    <a href="blog-details.html"><img
+                                            src="{{ asset('assets/frontend/images/blog3.jpg') }}" alt="" /></a>
+                                </div>
+                                {{-- <div class="single_blog_date color2">
                             <div class="single_blog_date_inner">
                                 <h3>22</h3>
                                 <span>DEC</span>
                                 <span class="years">2023</span>
                             </div>
+                        </div> --}}
+                                <div class="single_blog_content pt-4 pl-4 pr-4">
+                                    <div class="techno_blog_meta">
+                                        <a href="#">{{ $course->time }} </a>
+                                        <span class="meta-date pl-3">{{ $course->price }}</span>
+                                    </div>
+                                    <div class="blog_page_title pb-1">
+                                        <h3><a href="blog-details.html">{{ $course->title }}</a></h3>
+                                    </div>
+                                    <div class="blog_description">
+                                        <p>{!! Illuminate\Support\Str::limit($course->description ?? '', 100, '') !!}</p>
+                                    </div>
+                                    <div class="blog_page_button style_two pb-5">
+                                        <a href="{{ route('serviceDetail', $service->slug) }}">Read More <i
+                                                class="fa fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="single_blog_content pt-4 pl-4 pr-4">
-                            <div class="techno_blog_meta">
-                                <a href="#">Techno </a>
-                                <span class="meta-date pl-3">Consulting</span>
-                            </div>
-                            <div class="blog_page_title pb-1">
-                                <h3><a href="blog-details.html">The five devices you need to work anytime</a></h3>
-                            </div>
-                            <div class="blog_description">
-                                <p>Lorem ipsum dolor sit amet consectet adipisie cing elit sed eiusmod tempor incididunt
-                                    on labore et dolore. </p>
-                            </div>
-                            <div class="blog_page_button style_two pb-5">
-                                <a href="blog-details.html">Read More <i class="fa fa-long-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
 
+                </div>
             </div>
         </div>
-    </div>
-    <!--==================================================-->
-    <!----- End Techno Blog Area ----->
-    <!--==================================================-->
-
-@endsection
+        <!--==================================================-->
+        <!----- End Techno Blog Area ----->
+        <!--==================================================-->
+    @endsection

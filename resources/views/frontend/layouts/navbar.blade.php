@@ -20,8 +20,8 @@
                         <li><a href="{{ route('gallery')}}">Gallery</a>
                         </li>
                         <li><a href="{{ route('team') }}">Team</a>
-                        <li><a href="#">Contact</a>
-                        </li>
+                        {{-- <li><a href="{{route('contact')}}">Contact</a>
+                        </li> --}}
                     </ul>
                 </div>
             </div>

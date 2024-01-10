@@ -16,11 +16,12 @@ class FrontendController extends Controller
     {
         $sliders = Slider::all();
         $about = About::first();
+        $galleries= Gallery::inRandomOrder()->latest()->take(10)->get();
         $services = Service::inRandomOrder()->take(6)->where('status', 1)->get();
         $staffs = Staff::inRandomOrder()->take(4)->where('status', 1)->get();
         $testimonials = Testimonial::all();
-        $courses = Course::all();
-        return view('frontend.index', compact('sliders', 'about', 'services', 'staffs', 'testimonials', 'courses'));
+        $courses = Course::inRandomOrder()->latest()->take(3)->get();
+        return view('frontend.index', compact('sliders', 'about', 'services', 'staffs', 'testimonials', 'courses','galleries'));
     }
 
     public function about()
