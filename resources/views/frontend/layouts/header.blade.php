@@ -36,8 +36,8 @@
                                 <li><a href="{{ officeSetting()->twitter_url ?? '' }}"><i
                                             class="fa fa-twitter"></i></a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                {{-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
                             </ul>
                         </div>
                     </div>

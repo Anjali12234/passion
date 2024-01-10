@@ -37,7 +37,7 @@
                         <div class="menu-quick-link-container ml-4">
                             <ul id="menu-quick-link" class="menu">
                                 @foreach (services() as $service)
-                                    <li><a href="#">{{ $service->title }}</a></li>
+                                    <li><a href="{{ route('serviceDetail', $service->slug) }}">{{ $service->title }}</a></li>
                                 @endforeach
                             </ul>
                         </div>

@@ -12811,3 +12811,11 @@ div#particles .slider16 {
 div#particles .slider18 {
     background: inherit;
 }
+
+
+#glimpseWord.light {
+    color: #fff; /* Set your desired light color */
+    background: #ffcc00; /* Set your desired background color */
+    padding: 5px; /* Adjust padding as needed */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+}
