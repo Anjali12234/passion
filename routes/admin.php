@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PopUpController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
@@ -32,3 +33,6 @@ Route::put('popUp/{popUp}/updatePopUpStatus', [PopUpController::class, 'updateSt
 
 Route::resource('student',StudentController::class);
 Route::put('student/{student}/updateStudentStatus',[StudentController::class,'updateStatus'])->name('student.updateStudentStatus');
+
+Route::resource('gallery',GalleryController::class);
+Route::put('gallery/{gallery}/updateGalleryStatus',[GalleryController::class,'updateStatus'])->name('gallery.updaetGalleryStatus');

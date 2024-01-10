@@ -54,11 +54,11 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-file-earmark-text"></span><span class="mtext">Student</span>
+                    <a href="{{ route('admin.gallery.index') }}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-pie-chart"></span><span class="mtext">Gallery</span>
                     </a>
-
                 </li>
+                
                 <li class="dropdown">
                     <a href="{{ route('admin.popUp.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-bug"></span
