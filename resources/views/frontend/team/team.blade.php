@@ -21,13 +21,13 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
     </div>
 	<!-- ============================================================== -->
 	<!-- End Techno Breatcome Area -->
 	<!-- ============================================================== -->
-	
+
 	<!--==================================================-->
 	<!----- Start Techno About Area ----->
 	<!--==================================================-->
@@ -53,22 +53,22 @@
 						</div>
 						<div class="heading_experience_title">
 							<h2>Years of experience in IT Solution & Business</h2>
-						</div>	
+						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-6">
 					<div class="team_join_thumb">
-						<img src="{{asset('assets/frontend/images/team-pages.png')}}" alt="" />
+						<img src="{{asset('assets/frontend/images/slider/team-pages.png')}}" alt="" />
 					</div>
 				</div>
-				
+
 			</div>
-		</div>	
+		</div>
 	</div>
 	<!--==================================================-->
 	<!----- End Techno About Area ----->
 	<!--==================================================-->
-	
+
 	<!--==================================================-->
 	<!----- Start Techno Team Area ----->
 	<!--==================================================-->
@@ -87,7 +87,7 @@
 						<div class="em_bar">
 							<div class="em_bar_bg"></div>
 						</div>
-						
+
 					</div>
 				</div>
 				{{-- <div class="col-lg-3">
@@ -125,7 +125,7 @@
 						</div>
 					</div>
 				</div>
-                    
+
                 @endforeach
 
 			</div>

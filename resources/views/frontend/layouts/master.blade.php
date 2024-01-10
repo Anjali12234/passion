@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="70x70" href="{{ asset('assets/frontend/img/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="70x70" href="{{ officeSetting()->institute_logo ?? '' }}">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}" type="text/css" media="all" />
     <!-- carousel CSS -->
@@ -125,17 +125,10 @@
                     area.style.backgroundPositionY = offset * speed + "px";
                 });
             }
-
-            // Initial call to set the background position on page load
             updateParallax();
-
-            // Update the parallax effect on scroll
             window.addEventListener("scroll", updateParallax);
         });
     </script>
 
 </body>
-
-<!-- Mirrored from html.ditsolution.net/techno/index-14.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jan 2024 15:40:52 GMT -->
-
 </html>
