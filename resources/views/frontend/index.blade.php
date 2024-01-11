@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
                                             <div class="button">
-                                                <a href="#">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+                                                <a href="#contact_form">Contact Us <i class="fa fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
@@ -613,8 +613,8 @@
         </div>
     @endif
     {{-- Contact --}}
-
-    <div class="contact_area pt-85 pb-90"
+   
+    <div class="contact_area pt-85 pb-90" id="contact_form"
         style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
@@ -778,4 +778,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Smooth scrolling when clicking on the "Contact Us" link
+            $('.button a').on('click', function (e) {
+                e.preventDefault();
+    
+                var targetId = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(targetId).offset().top
+                }, 1000); // Adjust the duration of the animation if needed
+            });
+        });
+    </script>
 @endsection
