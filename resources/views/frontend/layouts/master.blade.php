@@ -8,6 +8,11 @@
     <title>Passion Education and Visa Consultancy</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="70x70" href="{{ officeSetting()->institute_logo ?? '' }}">
     <!-- bootstrap CSS -->
@@ -76,6 +81,11 @@
     @include('frontend.layouts.footer')
 
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <!-- jquery js -->
     <script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/jquery-3.2.1.min.js') }}"></script>
     <!-- bootstrap js -->
@@ -130,5 +140,34 @@
         });
     </script>
 
+
+
+
+    <script>
+        $(document).ready(function() {
+            $('#exampleModal').modal('show');
+            $('#carouselExampleIndicators').on('slid.bs.carousel', function() {
+                var activeIndex = $('#carouselExampleIndicators .carousel-item.active').index();
+                var popupCount = $('#carouselExampleIndicators').data('popup-count');
+                var nextIndex = (activeIndex + 1) % popupCount;
+                var title = $('#carouselExampleIndicators .carousel-item').eq(nextIndex).find('img').attr(
+                    'data-title');
+                $('#modalTitle').text(title);
+                // Check if $popups is defined and not empty
+                @if (isset($popups) && $popups->count() > 0)
+                    var nextIndex = (activeIndex + 1) % {{ $popups->count() }};
+                    var title = $('#carouselExampleIndicators .carousel-item').eq(nextIndex).find('img')
+                        .attr('data-title');
+                    $('#modalTitle').text(title);
+                @endif
+            });
+            // Close the modal when the "Close" button is clicked
+            $('#closeModalButton').on('click', function() {
+                $('#exampleModal').modal('hide');
+            });
+        });
+    </script>
+
 </body>
+
 </html>
