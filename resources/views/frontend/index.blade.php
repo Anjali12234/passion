@@ -1,6 +1,56 @@
 @extends('frontend.layouts.master')
 
 @section('container')
+
+    <!-- Modal popup notice -->
+    @if ($popups->count() > 0)
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Notice</h5>
+                    <button type="button" id="closeModalButton" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <ol class="carousel-indicators">
+                            @foreach ($popups as $key => $popup)
+                                <li data-target="#carouselExampleControls" data-slide-to="{{ $key }}"
+                                    class="{{ $key == 0 ? 'active' : '' }}"></li>
+                            @endforeach
+                        </ol>
+                        <div class="carousel-inner">
+                            @foreach ($popups as $key => $popup)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img class="d-block w-100" src="{{ $popup->image }}" alt=""
+                                        style="width: 100%;">
+                                </div>
+                            @endforeach
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
+
+
+
     {{-- slider --}}
     <div class="slider_list owl-carousel">
         @foreach ($sliders as $slider)
@@ -157,12 +207,13 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 wow fadeInLeft" data-wow-delay="0.4s">
                     <div class="single_about_thumb mb-3">
                         <div class="single_about_thumb_inner" style="position: relative;">
-                            <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;" alt="" />
+                            <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;"
+                                alt="" />
                             <div class="slider-video wow fadeInUp" data-wow-delay="0.3s"
                                 style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
                                 <div class="video-icon">
-                                    <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"
-                                        href="https://youtu.be/BS4TUd7FJSg">
+                                    <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube"
+                                        data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg">
                                         <i class="fa fa-play"></i>
                                     </a>
                                 </div>
@@ -693,23 +744,24 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="single_blog text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
                             <div class="single_blog_thumb">
-                                <a href="{{route('courseDetail',$course->slug)}}"><img src="{{ $course->image }}" style="height: 400px"
-                                        alt="" /></a>
+                                <a href="{{ route('courseDetail', $course->slug) }}"><img src="{{ $course->image }}"
+                                        style="height: 400px" alt="" /></a>
                             </div>
 
                             <div class="single_blog_content pt-4 pl-4 pr-4">
                                 <div class="techno_blog_meta">
-                                    <a href="{{route('courseDetail',$course->slug)}}">{{ $course->time }} </a>
+                                    <a href="{{ route('courseDetail', $course->slug) }}">{{ $course->time }} </a>
                                     <span class="meta-date pl-3">{{ $course->price }}</span>
                                 </div>
                                 <div class="blog_page_title pb-1">
-                                    <h3><a href="{{route('courseDetail',$course->slug)}}">{{ $course->title }}</a></h3>
+                                    <h3><a href="{{ route('courseDetail', $course->slug) }}">{{ $course->title }}</a>
+                                    </h3>
                                 </div>
                                 <div class="blog_description">
                                     <p>{!! Illuminate\Support\Str::limit($course->description ?? '', 100, '') !!}</p>
                                 </div>
                                 <div class="blog_page_button style_two pb-5">
-                                    <a href="{{route('courseDetail',$course->slug)}}">Read More <i
+                                    <a href="{{ route('courseDetail', $course->slug) }}">Read More <i
                                             class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -723,4 +775,7 @@
     <!--==================================================-->
     <!----- End Techno Blog Area ----->
     <!--==================================================-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 @endsection
