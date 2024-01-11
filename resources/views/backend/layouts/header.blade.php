@@ -32,6 +32,9 @@
 
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="notification-list mx-h-200 customscroll">
+                        <a href="{{route('admin.contact.readAllNotification')}}" class="text-dark">
+                            <small>सबै खाली गर्नुहोस्</small>
+                          </a> </span>नोटिफिकेसन</h5>
                         <ul>
                             @forelse ($user->unreadNotifications ?? [] as $notification)
                                 <div class="alert alert-dismissible fade show" role="alert"

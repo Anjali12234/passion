@@ -24,6 +24,7 @@
                         </ol>
                         <div class="carousel-inner">
                             @foreach ($popups as $key => $popup)
+                            
                                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                     <img class="d-block w-100" src="{{ $popup->image }}" alt=""
                                         style="width: 100%;">
@@ -42,7 +43,7 @@
                         </a>
                     </div>
 
-                   
+
                 </div>
             </div>
         </div>
@@ -613,7 +614,7 @@
         </div>
     @endif
     {{-- Contact --}}
-   
+
     <div class="contact_area pt-85 pb-90" id="contact_form"
         style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
         <div class="container">
@@ -784,7 +785,7 @@
             // Smooth scrolling when clicking on the "Contact Us" link
             $('.button a').on('click', function (e) {
                 e.preventDefault();
-    
+
                 var targetId = $(this).attr('href');
                 $('html, body').animate({
                     scrollTop: $(targetId).offset().top

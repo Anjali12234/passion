@@ -26,7 +26,11 @@
                     <a href="{{ route('admin.course.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-table"></span><span class="mtext">Course</span>
                     </a>
-
+                </li>
+                <li class="dropdown">
+                    <a href="{{ route('admin.contact.index') }}" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-table"></span><span class="mtext">Contact</span>
+                    </a>
                 </li>
                 <li>
                     <a href="{{ route('admin.service.index') }}" class="dropdown-toggle no-arrow">
@@ -58,7 +62,7 @@
                         <span class="micon bi bi-pie-chart"></span><span class="mtext">Gallery</span>
                     </a>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="{{ route('admin.popUp.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-bug"></span

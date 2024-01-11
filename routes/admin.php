@@ -19,6 +19,11 @@ Route::resource('officeSetting', SettingController::class)->only('index', 'store
 Route::resource('about', AboutController::class)->only('index', 'store', 'delete');
 Route::resource('contact', ContactUsController::class)->only('index', 'store', 'destroy');
 Route::put('contact/{contact}/deleteNotification', [ContactUsController::class, 'deleteNotification'])->name('contact.deleteNotification');
+Route::get('readAllNotification', [ContactUsController::class, 'readAllNotification'])->name('contact.readAllNotification');
+
+
+
+
 
 Route::resource('course', CourseController::class);
 Route::put('course/{course}/updateCourseStatus', [CourseController::class, 'updateStatus'])->name('course.updateCourseStatus');

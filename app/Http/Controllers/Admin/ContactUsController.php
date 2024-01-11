@@ -39,4 +39,12 @@ class ContactUsController extends Controller
         ]);
         return back();
     }
+
+    public function readAllNotification()
+    {
+        foreach (auth()->user()->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
+        return back();
+    }
 }
