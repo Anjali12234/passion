@@ -61,5 +61,8 @@ class FrontendController extends Controller
         $galleries = Gallery::latest()->get();
         return view('frontend.Gallery.gallery', compact('galleries'));
     }
-    
+    public function error404()
+    {
+        return view ('frontend.error.404error');
+    }
 }
