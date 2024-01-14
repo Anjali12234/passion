@@ -22,6 +22,15 @@
                 <form action="{{ route('admin.course.update',$course) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+                    @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label for="title">Title *</label>
@@ -29,6 +38,16 @@
                                 value="{{ old('title',$course->title ??'') }}">
                             <span class="text-warning">
                                 @error('title')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="slug">Slug *</label>
+                            <input class="form-control" id="slug" type="text" name="slug"
+                                value="{{ old('slug',$course->slug ??'') }}">
+                            <span class="text-warning">
+                                @error('slug')
                                     {{ $message }}
                                 @enderror
                             </span>
