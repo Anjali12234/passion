@@ -1,9 +1,6 @@
 @extends('frontend.layouts.master')
 @section('container')
 
-<!-- ============================================================== -->
-	<!-- Start Techno Breatcome Area -->
-	<!-- ============================================================== -->
     <div class="contact_area pt-85 pb-90"
     style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
         <div class="container">
@@ -24,13 +21,7 @@
 
         </div>
     </div>
-	<!-- ============================================================== -->
-	<!-- End Techno Breatcome Area -->
-	<!-- ============================================================== -->
 
-	<!--==================================================-->
-	<!----- Start Techno About Area ----->
-	<!--==================================================-->
 	<div class="team_member pt-85 pb-70">
 		<div class="container">
 			<div class="row">
@@ -65,17 +56,11 @@
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!----- End Techno About Area ----->
-	<!--==================================================-->
 
-	<!--==================================================-->
-	<!----- Start Techno Team Area ----->
-	<!--==================================================-->
 	 <div class="team_area pt-85 pb-80">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-9">
+				<div class="col-lg-9 wow fadeInLeft" data-wow-delay="0.4s">
 					<div class="section_title text_left mb-60 mt-3">
 						<div class="section_sub_title uppercase mb-3">
 							<h6>TEAM MEMBER</h6>
@@ -90,17 +75,11 @@
 
 					</div>
 				</div>
-				{{-- <div class="col-lg-3">
-					<div class="section_button mt-50">
-						<div class="button two">
-							<a href="#">Join Our Team</a>
-						</div>
-					</div>
-				</div> --}}
+
 			</div>
 			<div class="row">
                 @foreach ($staffs as $staff)
-				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay="0.4s">
 					<div class="team_style_three mb-30">
 						<div class="team_style_three_inner">
 							<div class="team_style_three-thumb">
@@ -131,8 +110,6 @@
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!----- End Techno Team Area ----->
-	<!--==================================================-->
+
 
 @endsection
