@@ -42,9 +42,7 @@
                                         </button>
                                     </form>
                                 </td>
-                                <td>
-                                    <a class="btn btn-outline-warning" href="{{ route('admin.course.show', $course) }}">
-                                        <i class="bi bi-eye"></i></i></a>
+                                <td
                                     <a class="btn btn-outline-primary" href="{{ route('admin.course.edit', $course) }}">
                                         <i class="bi bi-pencil"></i></a>
 

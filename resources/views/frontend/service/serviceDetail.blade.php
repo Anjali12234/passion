@@ -38,19 +38,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="single_blog mb-30 wow fadeInRight" data-wow-delay="0.4s">
-                            <div class="single_blog_thumb pb-4">
-                                <a href="blog-details.html"><img src="{{ $service->image }}"
-                                        style="height: 350px; width: 500px;" alt="" /></a>
+                    <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+                        <div class=" mb-30 wow fadeInRight" data-wow-delay="0.4s">
+                            <div class=" pb-4">
+                                <a href="#"><img src="{{ $service->image }}" style="width: 400px; height:400px;"
+                                         alt="" /></a>
                             </div>
-                            <div class="single_blog_content pl-4 pr-4">
-                                <div class="techno_blog_meta">
+                            <div class=""  style="width: 400px;">
+                                <div class="text-justify">
                                     <h5 href="#">{{ $service->title }} </h5>
 
                                 </div>
-                                <div class="blog_page_title pb-35">
-                                    <p>{!! Illuminate\Support\Str::limit($service->description ?? '', 10000, '') !!}</p>
+                                <div class="text-justify">
+                                    <p>{!! $service->description ?? '' !!}</p>
                                 </div>
                             </div>
                         </div>

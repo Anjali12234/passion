@@ -25,4 +25,5 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('serviceDetail/{service:slug}','serviceDetail')->name('serviceDetail');
     Route::get('team','team')->name('team');
     Route::get('gallery','gallery')->name('gallery');
+    Route::get('error404','error404')->name('error404');
 });

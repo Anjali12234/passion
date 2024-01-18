@@ -40,24 +40,23 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="single_blog mb-30 wow fadeInRight" data-wow-delay="0.4s">
-                    <div class="single_blog_thumb pb-4">
-                        <a href="blog-details.html"><img src="{{ $course->image }}" style="height: 400px; width: 500px;" alt="" /></a>
+            <div class="col-lg-4 col-md-12 col-sm-12 mx-auto">
+                <div class=" mb-30 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class=" pb-4">
+                        <a href="#"><img src="{{ $course->image }}" style="width: 400px; height:400px;"
+                                 alt="" /></a>
                     </div>
-                    <div class="single_blog_content pl-4 pr-4">
-                        <div class="techno_blog_meta">
-                            <a href="#">{{ $course->title }} </a>
-                            <span class="meta-date pl-3">{{ $course->price }}</span>
+                    <div class=""  style="width: 400px;">
+                        <div class="text-justify">
+                            <h5 href="#">{{ $course->title }} </h5>
+
                         </div>
-                        <div class="blog_page_title pb-35">
-                            <h3><a href="blog-details.html">{!! Illuminate\Support\Str::limit($course->description ?? '', 30, '') !!}</a></h3>
+                        <div class="text-justify">
+                            <p>{!! $course->description ?? '' !!}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>

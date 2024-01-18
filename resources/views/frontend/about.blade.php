@@ -28,12 +28,8 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 wow fadeInLeft" data-wow-delay="0.4s">
                 <div class="single_about_thumb mb-3">
                     <div class="single_about_thumb_inner" style="position: relative;">
-
-                        <!-- Image -->
                         <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;"
                             alt="" />
-
-                        <!-- Video Icon and Link -->
                         <div class="slider-video wow fadeInUp" data-wow-delay="0.3s"
                             style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
                             <div class="video-icon">
@@ -61,7 +57,6 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
                     </div>
                     <div class="section_main_title">
                         <h1>{{ $about->title ?? '' }}</h1>
-                        {{-- <h1>Provide Best <span>IT Solutions.</span></h1> --}}
                     </div>
                     <div class="em_bar">
                         <div class="em_bar_bg"></div>
@@ -82,7 +77,6 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
     <div class="container-fluid">
         <div class="row">
              <div class="col-lg-6 main-accordion-lt">
-                <!-- Start Accordion -->
                 <div class="acd-items acd-arrow pt-30 pb-30 mr-4 wow fadeInRight" data-wow-delay="0.4s">
                     <div class="section_title white text_left mb-60 mt-3">
                         <div class="section_sub_title uppercase mb-3">
@@ -111,18 +105,12 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
 
                     </div>
                 </div>
-                <!-- End Accordion -->
             </div>
             <div class="col-lg-6 absod">
                 <div class="single-panel">
                     <div class="single-panel-thumb">
                         <div class="single-panel-thumb-inner">
                             <img src="{{ $about->director_image ??'' }}" style="height: 741px; width: 800px;" alt="" />
-                        </div>
-                        <div class="main_video text_center">
-                            <div class="video-icon">
-                                <a class="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://youtu.be/BS4TUd7FJSg"><i class="fa fa-play"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>

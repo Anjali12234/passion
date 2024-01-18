@@ -1,8 +1,6 @@
 @extends('frontend.layouts.master')
 @section('container')
-    <!-- ============================================================== -->
-    <!-- Start Techno Breatcome Area -->
-    <!-- ============================================================== -->
+
     <div class="contact_area pt-90 pb-90 "
         style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
         <div class="container">
@@ -25,8 +23,8 @@
         </div>
     </div>
 
-    <div class="container py-5">
-        <div class="row">
+    <div class="container py-5 ">
+        <div class="row fadeInRight" data-wow-delay="0.4s">
             @foreach ($galleries as $gallery)
                 <div class="col-md-4 mb-3">
                     <div class="card" style="width: 18rem;">
