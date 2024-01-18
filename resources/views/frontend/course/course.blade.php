@@ -12,7 +12,7 @@ style="background-image:url('../assets/frontend/images/slider/dark2.jpg'); backg
                     </div>
                     <div class="breatcome_content">
                         <ul>
-                            <li><a href="{{ route('index') }}">Home</a> <i class="fa fa-angle-right"></i> <i class="fa fa-angle-right"></i> <span>Course</span></li>
+                            <li><a href="{{ route('index') }}">Home</a> <i class="fa fa-angle-right"></i>  <span>Course</span></li>
                         </ul>
                     </div>
                 </div>

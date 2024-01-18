@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="container py-3" style="margin-top: 100 px;">
+    <div class="container py-5">
         <div class="row">
             @foreach ($galleries as $gallery)
                 <div class="col-md-4 mb-3">
@@ -33,6 +33,8 @@
                         <img class="card-img-top" src="{{ $gallery->image }}" height="350" width="350"
                             alt="Card image cap">
                     </div>
+                    <p class="text-justify" style="width: 18rem;">{!! $gallery->title !!}</p>
+
                 </div>
             @endforeach
         </div>
