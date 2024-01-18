@@ -4565,6 +4565,7 @@ span.fill.my-class2 {
 }
 .single_about_shape_thumb img {
     width: 70%;
+    padding-bottom: 100px;
 }
 .single_about_signesur_thumb {
     float: left;

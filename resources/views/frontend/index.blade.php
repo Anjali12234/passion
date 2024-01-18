@@ -4,51 +4,50 @@
 
     <!-- Modal popup notice -->
     @if ($popups->count() > 0)
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Notice</h5>
-                    <button type="button" id="closeModalButton" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
-                        <ol class="carousel-indicators">
-                            @foreach ($popups as $key => $popup)
-                                <li data-target="#carouselExampleControls" data-slide-to="{{ $key }}"
-                                    class="{{ $key == 0 ? 'active' : '' }}"></li>
-                            @endforeach
-                        </ol>
-                        <div class="carousel-inner">
-                            @foreach ($popups as $key => $popup)
-                            
-                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <img class="d-block w-100" src="{{ $popup->image }}" alt=""
-                                        style="width: 100%;">
-                                </div>
-                            @endforeach
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Notice</h5>
+                        <button type="button" id="closeModalButton" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
+                            <ol class="carousel-indicators">
+                                @foreach ($popups as $key => $popup)
+                                    <li data-target="#carouselExampleControls" data-slide-to="{{ $key }}"
+                                        class="{{ $key == 0 ? 'active' : '' }}"></li>
+                                @endforeach
+                            </ol>
+                            <div class="carousel-inner">
+                                @foreach ($popups as $key => $popup)
+                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                        <img class="d-block w-100" src="{{ $popup->image }}" alt=""
+                                            style="width: 100%;">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
 
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endif
+    @endif
 
 
 
@@ -69,7 +68,8 @@
                                         </div>
                                         <div class="slider_button pt-5 d-flex wow fadeInUp" data-wow-delay="0.4s">
                                             <div class="button">
-                                                <a href="#contact_form">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+                                                <a href="#contact_form">Contact Us <i
+                                                        class="fa fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
                                         <div class="slider-video wow fadeInUp" data-wow-delay="0.3s">
@@ -202,14 +202,14 @@
     </div>
     {{-- about --}}
 
-    <div class="about_area pt-70 pb-100">
+    <div class="about_area pt-70 pb-200">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 wow fadeInLeft" data-wow-delay="0.4s">
                     <div class="single_about_thumb mb-3">
                         <div class="single_about_thumb_inner" style="position: relative;">
-                            <img src="{{ $about->about_image ?? '' }}" style="height: 600px; width:500px;"
-                                alt="" />
+                            <img src="{{ $about->about_image ?? '' }}"
+                                style="height: 600px; width:500px; padding-bottom: 100px;" alt="" />
                             <div class="slider-video wow fadeInUp" data-wow-delay="0.3s"
                                 style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);">
                                 <div class="video-icon">
@@ -222,7 +222,7 @@
 
                         </div>
                     </div>
-                    <div class="single_about_shape">
+                    <div class="single_about_shape ">
                         <div class="single_about_shape_thumb bounce-animate">
                             <img src="{{ asset('assets/frontend/images/about-circle.png') }}" alt="" />
                         </div>
@@ -240,7 +240,7 @@
                             <div class="em_bar_bg"></div>
                         </div>
                         <div class="section_content_text pt-4">
-                            <p> {!! Str::words($about->about_description ?? '', 150, '..') !!}</p>
+                            <p>{!! Illuminate\Support\Str::limit($about->about_description ?? '', 400, '') !!}</p>
                         </div>
                     </div>
                     <div class="singel_about_left_inner pl-4">
@@ -252,7 +252,6 @@
             </div>
         </div>
     </div>
-    {{-- service --}}
     @if (count($services) > 0)
         <div class="flipbox_area pt-85 pb-70"
             style="background-image:url('../assets/frontend/images/slider/bg2.jpg'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
@@ -589,7 +588,7 @@
                                         <div class="single_testimonial mt-3 mb-5 wow fadeInUp" data-wow-delay="0.4s">
                                             <div class="single_testimonial_content">
                                                 <div class="single_testimonial_content_text mb-4">
-                                                    <p>{{ $testimonial->description ?? '' }}</p>
+                                                    <p>{!! $testimonial->description ?? '' !!}</p>
                                                 </div>
                                                 <div class="single_testimonial_thumb mt-2 mr-3"
                                                     style="border-radius: 50%;">
@@ -644,8 +643,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="quote_wrapper wow fadeInUp" data-wow-delay="0.4s">
-                        <form id="contact_form" action="{{ route('admin.contact.store') }}" method="POST"
-                            id="dreamit-form">
+                        <div id="status"></div>
+                        <form id="dreamit-form">
                             @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -708,12 +707,11 @@
                                         </span>
                                     </div>
                                     <div class="quote_btn text_center">
-                                        <button class="btn" type="submit">Free Consultancy</button>
+                                        <button class="btn" type="button" id="submitBtn">Submit</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <div id="status"></div>
                     </div>
                 </div>
             </div>
@@ -781,9 +779,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             // Smooth scrolling when clicking on the "Contact Us" link
-            $('.button a').on('click', function (e) {
+            $('.button a').on('click', function(e) {
                 e.preventDefault();
 
                 var targetId = $(this).attr('href');
@@ -792,5 +790,41 @@
                 }, 1000); // Adjust the duration of the animation if needed
             });
         });
+        $(document).ready(function () {
+        $("#submitBtn").click(function () {
+            // Get form data
+            var formData = new FormData($('#dreamit-form')[0]);
+
+            // Make an AJAX request
+            $.ajax({
+                url: '{{ route('admin.contact.store') }}',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    // Handle success response
+                    console.log(data);
+
+                    // Display success message
+                    $('#status').html('<div class="alert alert-success alert-dismissible">' +
+                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                        'Form submitted successfully!</div>');
+
+                    // Clear form fields or handle other UI changes if needed
+                    $('#dreamit-form')[0].reset();
+                },
+                error: function (error) {
+                    // Handle error response
+                    console.error('Error:', error);
+
+                    // Display error message
+                    $('#status').html('<div class="alert alert-danger alert-dismissible">' +
+                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                        'Form submission failed!</div>');
+                }
+            });
+        });
+    });
     </script>
 @endsection

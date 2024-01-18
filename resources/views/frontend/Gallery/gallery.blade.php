@@ -23,18 +23,16 @@
         </div>
     </div>
 
-    <div class="container py-3" style="margin-top: 100 px;">
-        <div class="row wow fadeInRight" data-wow-delay="0.4s">
+    <div class="container py-5 fadeInRight" data-wow-delay="0.4s">
+        <div class="row">
             @foreach ($galleries as $gallery)
                 <div class="col-md-4 mb-3">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{ $gallery->image }}" height="350" width="350"
                             alt="Card image cap">
                     </div>
-                    <div class="card" style="width: 18rem;">
-                        <p style="text-align: justify">{{ $gallery->title }}</p>
+                    <p class="text-justify" style="width: 18rem;">{!! $gallery->title !!}</p>
 
-                    </div>
                 </div>
             @endforeach
         </div>
