@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="container py-3" style="margin-top: 100 px;">
+    <div class="container py-5">
         <div class="row wow fadeInRight" data-wow-delay="0.4s">
             @foreach ($galleries as $gallery)
                 <div class="col-md-4 mb-3">

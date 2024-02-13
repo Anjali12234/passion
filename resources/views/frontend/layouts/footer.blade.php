@@ -2,7 +2,7 @@
     <!----- Start Techno Footer Middle Area ----->
     <!--==================================================-->
 
-    <div class="footer-middle pt-95" style="background-image:url('../assets/frontend/images/call-bg.png'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">">
+    <div class="footer-middle pt-95" style="background-image:url('../assets/frontend/images/call-bg.png'); background-attachment: fixed; background-size: cover; background-repeat: no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12">
