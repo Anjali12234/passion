@@ -34,6 +34,10 @@ class StaffController extends Controller
 
     public function update(UpdateStaffRequest $request, Staff $staff)
     {
+        if ($request->hasFile('image') && $image= $staff->getRawOriginal('image')) {
+
+            $this->deleteFile($image);
+        }
         $staff->update($request->validated());
         toast('Staff updated successfully', 'success');
         return redirect(route('admin.staff.index'));

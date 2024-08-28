@@ -36,6 +36,10 @@ class ServiceController extends Controller
 
     public function update(UpdateServiceRequest $request, Service $service)
     {
+        if ($request->hasFile('image') && $image= $service->getRawOriginal('image')) {
+
+            $this->deleteFile($image);
+        }
         $service->update($request->validated());
         toast('Service updated successfully', 'success');
         return redirect(route('admin.service.index'));

@@ -10,7 +10,6 @@ use App\Models\Slider;
 use App\Models\Staff;
 use App\Models\Testimonial;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {

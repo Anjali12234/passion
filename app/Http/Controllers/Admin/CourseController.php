@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Course\StoreCourseRequest;
 use App\Http\Requests\Course\UpdateCourseRequest;
 use App\Models\Course;
-use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
@@ -40,6 +39,10 @@ class CourseController extends Controller
 
     public function update(UpdateCourseRequest $request, Course $course)
     {
+        if ($request->hasFile('image') && $image= $course->getRawOriginal('image')) {
+
+            $this->deleteFile($image);
+        }
         $course->update($request->validated());
         toast('Course updated successfully', 'success');
         return redirect(route('admin.course.index'));
