@@ -34,6 +34,10 @@ class TestimonialController extends Controller
 
     public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
     {
+        if ($request->hasFile('image') && $image= $testimonial->getRawOriginal('image')) {
+
+            $this->deleteFile($image);
+        }
         $testimonial->update($request->validated());
         toast('Testimonial updated successfully', 'success');
         return redirect(route('admin.testimonial.index'));

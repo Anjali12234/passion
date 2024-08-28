@@ -36,6 +36,10 @@ class PopUpController extends Controller
 
     public function update(UpdatePopUpRequest $request, PopUp $popUp)
     {
+        if ($request->hasFile('image') && $image= $popUp->getRawOriginal('image')) {
+
+            $this->deleteFile($image);
+        }
         $popUp->update($request->validated());
         toast('PopUp updated successfully', 'success');
         return redirect(route('admin.popUp.index'));
