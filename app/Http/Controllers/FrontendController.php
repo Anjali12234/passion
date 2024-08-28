@@ -32,6 +32,7 @@ class FrontendController extends Controller
         return view('frontend.about', compact('about'));
     }
 
+
     public function course()
     {
         $courses = Course::all();
